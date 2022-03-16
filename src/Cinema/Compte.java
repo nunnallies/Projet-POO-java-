@@ -8,6 +8,6 @@ package Cinema;
  *
  * @author Naiss
  */
-public class Compte {
+public class Compte extends Client {
     
 }
