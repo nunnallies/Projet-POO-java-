@@ -30,7 +30,7 @@ public class JDBConnector {
         } catch (ClassNotFoundException e) {
             System.err.println("Driver loading error : " + e);
         }
-        catch (Exception e)
+        catch (SQLException e)
         {
             System.out.println("Error Occured " + e.toString());
         }
