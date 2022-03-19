@@ -4,9 +4,13 @@
  */
 package Vue;
 
+import projetjava.utils.*;
+
 import java.sql.Connection;
 import static javax.swing.text.html.HTML.Tag.SELECT;
 import projetjava.utils.*;
+import java.sql.*;
+
 /**
  *
  * @author XPS
@@ -19,11 +23,37 @@ public class PageAcc extends javax.swing.JFrame {
     public PageAcc() {
         initComponents();
     }
-    
-     void fermer(){
+
+    void fermer() {
         dispose();
-        
-    } 
+
+    }
+
+    public boolean VerifierExistenceEmploye(String pseudonyme, String mdp) {
+        Connection conn;
+        JDBConnector jdbc = new JDBConnector();
+        conn = jdbc.CreateConnection();
+        int a=-1;
+        try {
+            PreparedStatement st = conn.prepareStatement("SELECT count(*) from employe WHERE login='" + pseudonyme + "' AND motdepasse='" + mdp + "'");
+            ResultSet rs = st.executeQuery();
+            while (rs.next()){
+                 a=rs.getInt(WIDTH);
+            }
+
+            
+        } catch (SQLException e) {
+            System.out.println("Error Occured " + e.toString());
+        }
+        System.out.println("Le nombre d'element répondant aux criteres est de :" + a);
+        if (a==0){
+            return false; 
+        }
+        else{
+            return true;
+        }
+       
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,9 +66,9 @@ public class PageAcc extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        LoginField = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jTextField3 = new javax.swing.JTextField();
+        PasswordField = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -64,14 +94,14 @@ public class PageAcc extends javax.swing.JFrame {
         jLabel2.setText("PassWord");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 210, 60, 20));
 
-        jTextField2.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        LoginField.setBackground(new java.awt.Color(255, 255, 255));
+        LoginField.setForeground(new java.awt.Color(0, 0, 0));
+        LoginField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                LoginFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(633, 159, 140, -1));
+        getContentPane().add(LoginField, new org.netbeans.lib.awtextra.AbsoluteConstraints(633, 159, 140, -1));
 
         jButton1.setBackground(new java.awt.Color(51, 51, 51));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -83,14 +113,14 @@ public class PageAcc extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(647, 340, 90, 40));
 
-        jTextField3.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField3.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        PasswordField.setBackground(new java.awt.Color(255, 255, 255));
+        PasswordField.setForeground(new java.awt.Color(0, 0, 0));
+        PasswordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                PasswordFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(633, 230, 140, -1));
+        getContentPane().add(PasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(633, 230, 140, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/ciné.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 50, 300, 340));
@@ -105,20 +135,20 @@ public class PageAcc extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       
-        
-    
-        new AppercuEmplyé().setVisible(true); 
-       fermer();
+
+        if (VerifierExistenceEmploye(LoginField.getText(),PasswordField.getText())){
+        new AppercuEmplyé().setVisible(true);
+        fermer();
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void PasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_PasswordFieldActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void LoginFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_LoginFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,18 +183,17 @@ public class PageAcc extends javax.swing.JFrame {
                 new PageAcc().setVisible(true);
             }
         });
-        
-        
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField LoginField;
+    private javax.swing.JTextField PasswordField;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }

@@ -12,9 +12,13 @@ import java.sql.*;
  */
 public class JDBConnector {
      Connection conn = null;
+     
+     public JDBConnector(){
+        
+     }
 
     public Connection CreateConnection() {
-        String url = "jdbc:mysql://localhost:3306/cine";
+        String url = "jdbc:mysql://localhost:3306/cinema";
         String user      = "root";
         String password  = "";
         System.out.println("Connecting database...");
