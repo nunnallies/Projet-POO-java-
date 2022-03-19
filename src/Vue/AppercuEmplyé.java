@@ -39,7 +39,7 @@ public class AppercuEmplyé extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Bienvune à vous !");
-        setPreferredSize(new java.awt.Dimension(961, 480));
+        setPreferredSize(new java.awt.Dimension(961, 478));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N

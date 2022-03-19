@@ -10,8 +10,7 @@ import java.sql.*;
  *
  * @author Naiss
  */
-public class Compte extends Client {
-    String mdp,pseudo;
-    int numerocompte;
+public class Compte  {
+   
     
 }
