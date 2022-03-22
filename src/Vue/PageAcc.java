@@ -49,11 +49,10 @@ public class PageAcc extends javax.swing.JFrame {
         System.out.println("Le nombre d'element répondant aux criteres est de :" + a);
         if (a==0){
             return false; 
-        }
+        } 
         else{
             return true;
         }
-       
     }
 
     /**
@@ -105,11 +104,7 @@ public class PageAcc extends javax.swing.JFrame {
                 LoginFieldActionPerformed(evt);
             }
         });
-<<<<<<< HEAD
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 163, 140, -1));
-=======
-        getContentPane().add(LoginField, new org.netbeans.lib.awtextra.AbsoluteConstraints(633, 159, 140, -1));
->>>>>>> bac68657ceb40ae59be0eb6ee552f9c08a5e0b8f
+        getContentPane().add(LoginField, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 160, 140, -1));
 
         jButton1.setBackground(new java.awt.Color(51, 51, 51));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -128,17 +123,13 @@ public class PageAcc extends javax.swing.JFrame {
                 PasswordFieldActionPerformed(evt);
             }
         });
-<<<<<<< HEAD
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 234, 140, -1));
-=======
-        getContentPane().add(PasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(633, 230, 140, -1));
->>>>>>> bac68657ceb40ae59be0eb6ee552f9c08a5e0b8f
+        getContentPane().add(PasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 231, 140, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/ciné.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 20, 240, 400));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/eseeee.png"))); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, -1, 350));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, -1, 350));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/eseeee.png"))); // NOI18N
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, -1, -1));
@@ -148,17 +139,15 @@ public class PageAcc extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-<<<<<<< HEAD
-       
-        new AppercuEmplyé().setVisible(true);
-        fermer();
-=======
 
-        if (VerifierExistenceEmploye(LoginField.getText(),PasswordField.getText())){
         new AppercuEmplyé().setVisible(true);
         fermer();
-        }
->>>>>>> bac68657ceb40ae59be0eb6ee552f9c08a5e0b8f
+
+        if (VerifierExistenceEmploye(LoginField.getText(), PasswordField.getText())) {
+            new AppercuEmplyé().setVisible(true);
+            fermer();
+        } 
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void PasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordFieldActionPerformed
@@ -174,8 +163,8 @@ public class PageAcc extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        
-        /* Create and display the form */
+
+ /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new PageAcc().setVisible(true);
@@ -193,11 +182,6 @@ public class PageAcc extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-<<<<<<< HEAD
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-=======
->>>>>>> bac68657ceb40ae59be0eb6ee552f9c08a5e0b8f
     // End of variables declaration//GEN-END:variables
 }

@@ -1,5 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+/*//GEN-FIRST:event_jButton1ActionPerformed
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license//GEN-LAST:event_jButton1ActionPerformed
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vue;
@@ -23,7 +23,7 @@ public class AppercuEmplyé extends javax.swing.JFrame {
     }
     
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
@@ -95,21 +95,22 @@ public class AppercuEmplyé extends javax.swing.JFrame {
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, -1, -1));
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }                                        
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        new MAJfilm().setVisible(true);
+        fermer();
+    }                                        
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
        new reduction().setVisible(true);
        fermer();
-    }//GEN-LAST:event_jButton2ActionPerformed
-
+    }   
+    
     /**
      * @param args the command line arguments
      */
@@ -144,8 +145,8 @@ public class AppercuEmplyé extends javax.swing.JFrame {
             }
         });
     }
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    
+    // Variables declaration - do not modify                     
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -156,5 +157,5 @@ public class AppercuEmplyé extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }

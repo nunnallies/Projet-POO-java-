@@ -5,6 +5,7 @@
 package projetjava.utils;
 
 import java.sql.*;
+import java.lang.*;
 
 /**
  *
@@ -18,13 +19,13 @@ public class JDBConnector {
      }
 
     public Connection CreateConnection() {
-        String url = "jdbc:mysql://localhost:3306/cinema";
+        String url = "jdbc:mysql://localhost:3306/cine";
         String user      = "root";
         String password  = "";
         System.out.println("Connecting database...");
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection(url, user,password);
+            conn = DriverManager.getConnection(url,user,password);
             System.out.println(".");
             System.out.println(".");
             System.out.println(".");
