@@ -14,8 +14,7 @@ public class Client {
     int age,numeroclient;
     
     //Constructeur
-    public Client(int numeroclient,String nom,String prenom,String adresse,String mail,int age){
-        this.numeroclient=numeroclient;
+    public Client(String nom,String prenom,String adresse,String mail,int age){
         this.nom=nom;
         this.prenom=prenom;
         this.adresse=adresse;

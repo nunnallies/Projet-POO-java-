@@ -48,7 +48,7 @@ public class PageAcc extends javax.swing.JFrame {
         System.out.println("Le nombre d'element répondant aux criteres est de :" + a);
         if (a==0){
             return false; 
-        }
+        } 
         else{
             return true;
         }
