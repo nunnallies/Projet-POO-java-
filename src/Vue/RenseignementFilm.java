@@ -3,6 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vue;
+import Cinema.Film;
+import cinema.*;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.SQLException;
+import java.sql.Statement;
+import projetjava.utils.JDBConnector;
 
 /**
  *
@@ -197,10 +204,6 @@ public class RenseignementFilm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
-
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
@@ -220,8 +223,33 @@ public class RenseignementFilm extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        AjouterUnFilm(jTextField9.getText(),jTextField1.getText(),jTextField2.getText(),jTextField5.getText(),jTextField3.getText(),jTextField10.getText(),jTextField7.getText(),jTextField4.getText());
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
+ public void AjouterUnFilm(String MatriculeEmploye, String NomFilm, String Realisateur, String DateDeParution, String Synopsis, String NoteDePresse, String NoteDeSpec, String Duree) {
+        Connection conn = null;
+        JDBConnector jdbc = new JDBConnector();
+        conn = jdbc.CreateConnection();
+        try {
+            String requete = "INSERT INTO film ('Nom', 'Realisateur', 'DateDeParution', 'Synopsis', 'NoteDePresse', 'NoteDeSpectateurs', 'NombreSpec', 'matriculeemploye','Duree') VALUES ('" + NomFilm + "','" + Realisateur + "','" + DateDeParution + "','" + Synopsis + "','" + NoteDePresse + "','" + NoteDeSpec + "'"+Duree+"')";
+            Statement st = conn.createStatement();
+            int rs = st.executeUpdate(requete);
+            if (rs > 0) {
+                System.out.println("Le nombre de film ajouté à la base de donnée est de : " + rs);
+            }
+            if (rs == 0) {
+                System.out.println("Votre requete n'a apporté aucune modification.");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+ }
     /**
      * @param args the command line arguments
      */
