@@ -36,9 +36,12 @@ public class AppercuEmplyé extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(961, 480));
+        setMaximumSize(new java.awt.Dimension(960, 536));
+        setMinimumSize(new java.awt.Dimension(960, 536));
+        setPreferredSize(new java.awt.Dimension(960, 536));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/dossierclient.png"))); // NOI18N
@@ -47,7 +50,7 @@ public class AppercuEmplyé extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 156, 307));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 207, 156, 260));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/reduc.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -55,7 +58,7 @@ public class AppercuEmplyé extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 156, 307));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 207, 156, 260));
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/filmpopu.png"))); // NOI18N
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -63,7 +66,7 @@ public class AppercuEmplyé extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 130, 156, 307));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 207, 156, 260));
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/update.png"))); // NOI18N
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -71,31 +74,39 @@ public class AppercuEmplyé extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 130, 156, 307));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 210, 156, 260));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Dossier Client");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 126, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 126, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setText("Réduction");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 100, 96, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 96, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setText("Film Populaire");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setText("MAJ Film");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 100, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 180, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("MENU");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(452, 43, -1, 27));
+        jLabel5.setText("MENU EMPLOYE");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, -1, 27));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/tocket.png"))); // NOI18N
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, -1, 70));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/ticket3.png"))); // NOI18N
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, -1, 150));
+
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/retour2.png"))); // NOI18N
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 100, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -118,6 +129,11 @@ public class AppercuEmplyé extends javax.swing.JFrame {
         new MAJfilm().setVisible(true);
         fermer();
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+       new Menu().setVisible(true);
+       fermer();
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,6 +175,7 @@ public class AppercuEmplyé extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
