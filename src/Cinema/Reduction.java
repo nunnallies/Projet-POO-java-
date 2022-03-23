@@ -10,4 +10,5 @@ package Cinema;
  */
 public class Reduction {
     
+    
 }
