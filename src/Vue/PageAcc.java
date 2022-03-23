@@ -140,8 +140,7 @@ public class PageAcc extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        new AppercuEmplyé().setVisible(true);
-        fermer();
+        
 
         if (VerifierExistenceEmploye(LoginField.getText(), PasswordField.getText())) {
             new AppercuEmplyé().setVisible(true);
