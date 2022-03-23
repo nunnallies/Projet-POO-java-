@@ -9,6 +9,9 @@ package Cinema;
  * @author Naiss
  */
 public class Reduction {
+    int pourcentage;
     
-    
+Reduction(int pourcentage){
+    this.pourcentage=pourcentage;
+}
 }
