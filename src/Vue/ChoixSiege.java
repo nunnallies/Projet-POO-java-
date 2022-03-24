@@ -193,20 +193,20 @@ public class ChoixSiege extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Siège libre");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(560, 330, 71, 21);
+        jLabel6.setBounds(560, 330, 57, 16);
 
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Siège prit");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(720, 330, 64, 21);
+        jLabel7.setBounds(720, 330, 51, 16);
 
         jButton1.setText("jButton1");
         getContentPane().add(jButton1);
-        jButton1.setBounds(440, 390, 94, 100);
+        jButton1.setBounds(440, 390, 75, 100);
 
         jButton2.setText("jButton1");
         getContentPane().add(jButton2);
-        jButton2.setBounds(550, 390, 94, 100);
+        jButton2.setBounds(550, 390, 75, 100);
 
         jButton3.setText("jButton1");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -215,7 +215,7 @@ public class ChoixSiege extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(710, 390, 94, 100);
+        jButton3.setBounds(710, 390, 75, 100);
 
         jButton4.setText("jButton1");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -224,7 +224,7 @@ public class ChoixSiege extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4);
-        jButton4.setBounds(830, 390, 94, 100);
+        jButton4.setBounds(830, 390, 75, 100);
 
         jButton6.setText("jButton1");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -233,7 +233,7 @@ public class ChoixSiege extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton6);
-        jButton6.setBounds(320, 540, 94, 100);
+        jButton6.setBounds(320, 540, 75, 100);
 
         jButton7.setText("jButton1");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -242,7 +242,7 @@ public class ChoixSiege extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton7);
-        jButton7.setBounds(440, 540, 94, 100);
+        jButton7.setBounds(440, 540, 75, 100);
 
         jButton8.setText("jButton1");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -251,7 +251,7 @@ public class ChoixSiege extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton8);
-        jButton8.setBounds(940, 390, 94, 100);
+        jButton8.setBounds(940, 390, 75, 100);
 
         jButton9.setText("jButton1");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
@@ -260,7 +260,7 @@ public class ChoixSiege extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton9);
-        jButton9.setBounds(550, 540, 94, 100);
+        jButton9.setBounds(550, 540, 75, 100);
 
         jButton10.setText("jButton1");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
@@ -269,7 +269,7 @@ public class ChoixSiege extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton10);
-        jButton10.setBounds(710, 540, 94, 100);
+        jButton10.setBounds(710, 540, 75, 100);
 
         jButton11.setText("jButton1");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -278,7 +278,7 @@ public class ChoixSiege extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton11);
-        jButton11.setBounds(830, 540, 94, 100);
+        jButton11.setBounds(830, 540, 75, 100);
 
         jButton12.setText("jButton1");
         jButton12.addActionListener(new java.awt.event.ActionListener() {
@@ -287,7 +287,7 @@ public class ChoixSiege extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton12);
-        jButton12.setBounds(940, 540, 94, 100);
+        jButton12.setBounds(940, 540, 75, 100);
 
         jButton13.setText("jButton1");
         jButton13.addActionListener(new java.awt.event.ActionListener() {
@@ -296,7 +296,7 @@ public class ChoixSiege extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton13);
-        jButton13.setBounds(320, 700, 94, 100);
+        jButton13.setBounds(320, 700, 75, 100);
 
         jButton14.setText("jButton1");
         jButton14.addActionListener(new java.awt.event.ActionListener() {
@@ -305,7 +305,7 @@ public class ChoixSiege extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton14);
-        jButton14.setBounds(440, 700, 94, 100);
+        jButton14.setBounds(440, 700, 75, 100);
 
         jButton15.setText("jButton1");
         jButton15.addActionListener(new java.awt.event.ActionListener() {
@@ -314,7 +314,7 @@ public class ChoixSiege extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton15);
-        jButton15.setBounds(550, 700, 94, 100);
+        jButton15.setBounds(550, 700, 75, 100);
 
         jButton16.setText("jButton1");
         jButton16.addActionListener(new java.awt.event.ActionListener() {
@@ -323,7 +323,7 @@ public class ChoixSiege extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton16);
-        jButton16.setBounds(710, 700, 94, 100);
+        jButton16.setBounds(710, 700, 75, 100);
 
         jButton17.setText("jButton1");
         jButton17.addActionListener(new java.awt.event.ActionListener() {
@@ -332,7 +332,7 @@ public class ChoixSiege extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton17);
-        jButton17.setBounds(830, 700, 94, 100);
+        jButton17.setBounds(830, 700, 75, 100);
 
         jButton18.setText("jButton1");
         jButton18.addActionListener(new java.awt.event.ActionListener() {
@@ -341,7 +341,7 @@ public class ChoixSiege extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton18);
-        jButton18.setBounds(940, 700, 94, 100);
+        jButton18.setBounds(940, 700, 75, 100);
 
         jLabel9.setBackground(new java.awt.Color(153, 153, 153));
         jLabel9.setForeground(new java.awt.Color(102, 102, 102));

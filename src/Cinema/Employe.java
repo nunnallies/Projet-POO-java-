@@ -50,7 +50,7 @@ public class Employe {
         JDBConnector jdbc = new JDBConnector();
         conn = jdbc.CreateConnection();
         try {
-            String requete = "INSERT INTO film ('Nom', 'Realisateur', 'DateDeParution', 'Synopsis', 'NoteDePresse', 'NoteDeSpectateurs', 'NombreSpec', 'matriculeemploye') VALUES ('" + NomFilm + "','" + Realisateur + "','" + DateDeParution + "','" + Synopsis + "','" + NoteDePresse + "','" + NoteDeSpec + "')";
+            String requete = "INSERT INTO film (`Nom`, `Realisateur`, `DateDeParution`, `Synopsis`, `NoteDePresse`, `NoteDeSpectateurs`, `NombreSpec`, `matriculeemploye`) VALUES ('" + NomFilm + "','" + Realisateur + "','" + DateDeParution + "','" + Synopsis + "','" + NoteDePresse + "','" + NoteDeSpec + "')";
             Statement st = conn.createStatement();
             int rs = st.executeUpdate(requete);
             if (rs > 0) {
