@@ -19,7 +19,7 @@ public class JDBConnector {
      }
 
     public Connection CreateConnection() {
-        String url = "jdbc:mysql://localhost:3306/cinema";
+        String url = "jdbc:mysql://localhost:3306/cine";
         String user      = "root";
         String password  = "";
         System.out.println("Connecting database...");
