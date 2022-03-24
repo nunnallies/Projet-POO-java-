@@ -125,6 +125,12 @@ public class Employe {
 
     }
     
+    public void SupprimerFilm(String nom){
+        Connection conn;
+        JDBConnector jdbc = new JDBConnector();
+        conn = jdbc.CreateConnection();
+        
+    }
     
 
 }
