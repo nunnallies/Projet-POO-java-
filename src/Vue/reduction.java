@@ -4,7 +4,12 @@
  */
 package Vue;
 
+import Cinema.*;
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+import projetjava.utils.JDBConnector;
 
 /**
  *
@@ -140,7 +145,9 @@ public class reduction extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    
+    
+    
     /**
      * @param args the command line arguments
      */
