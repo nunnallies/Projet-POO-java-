@@ -9,7 +9,7 @@ package Cinema;
  * @author Naiss
  */
 public class Reduction {
-    int pourcentage;
+    public int pourcentage;
     
 Reduction(int pourcentage){
     this.pourcentage=pourcentage;

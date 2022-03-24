@@ -4,7 +4,8 @@
  */
 package Vue;
 import Cinema.Film;
-import cinema.*;
+import Cinema.*;
+import java.sql.*;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.SQLException;
@@ -223,7 +224,8 @@ public class RenseignementFilm extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        AjouterUnFilm(jTextField9.getText(),jTextField1.getText(),jTextField2.getText(),jTextField5.getText(),jTextField3.getText(),jTextField10.getText(),jTextField7.getText(),jTextField4.getText());
+        
+        AjouterUnFilm(1,"Un Film","Anais Mongolo",new Date(System.currentTimeMillis()),"Un synopsis.",8,6,80000);
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -231,12 +233,13 @@ public class RenseignementFilm extends javax.swing.JFrame {
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
- public void AjouterUnFilm(String MatriculeEmploye, String NomFilm, String Realisateur, String DateDeParution, String Synopsis, String NoteDePresse, String NoteDeSpec, String Duree) {
+ public void AjouterUnFilm(int MatriculeEmploye, String NomFilm, String Realisateur, Date DateDeParution, String Synopsis, float NoteDePresse, float NoteDeSpec, int Duree) {
         Connection conn = null;
         JDBConnector jdbc = new JDBConnector();
         conn = jdbc.CreateConnection();
         try {
-            String requete = "INSERT INTO film ('Nom', 'Realisateur', 'DateDeParution', 'Synopsis', 'NoteDePresse', 'NoteDeSpectateurs', 'NombreSpec', 'matriculeemploye','Duree') VALUES ('" + NomFilm + "','" + Realisateur + "','" + DateDeParution + "','" + Synopsis + "','" + NoteDePresse + "','" + NoteDeSpec + "'"+Duree+"')";
+            String requete = "INSERT INTO film (`Nom`,`Realisateur`,`DateDeParution`,`Synopsis`,`NoteDePresse`,`NoteDeSpectateurs`,`matriculeemploye`,`Duree`) VALUES ('"+NomFilm+"','"+Realisateur+"','"+DateDeParution +"','"+Synopsis+"','"+NoteDePresse+"','"+NoteDeSpec+"','"+MatriculeEmploye+"','"+Duree+"')";
+            System.out.println(requete);
             Statement st = conn.createStatement();
             int rs = st.executeUpdate(requete);
             if (rs > 0) {

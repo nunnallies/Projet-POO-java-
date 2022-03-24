@@ -10,7 +10,22 @@ import java.sql.*;
  *
  * @author Naiss
  */
-public class Compte  {
+public class Compte   {
+    int numerocompte,numeroclient,age; 
+    String MotDePasse,pseudonyme;
+    String nom, prenom, adresse, mail;
+    
+    Compte (int numerocompte,int numeroclient,String nom,String prenom,int age, String adresse,String mail,String pseudonyme,String MotDePasse){
+        this.prenom=prenom; 
+        this.pseudonyme=pseudonyme;
+        this.adresse=adresse; 
+        this.age=age;
+        this.mail=mail;
+        this.MotDePasse=MotDePasse;
+        this.numeroclient=numeroclient;
+        this.numerocompte=numerocompte;
+        this.nom=nom;
+    }
    
     
-}
+ }
