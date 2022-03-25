@@ -4,6 +4,11 @@
  */
 package Vue;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+import projetjava.utils.JDBConnector;
+
 /**
  *
  * @author XPS
@@ -32,12 +37,11 @@ public class SupprimerFilm extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(960, 546));
         setMinimumSize(new java.awt.Dimension(960, 546));
-        setPreferredSize(new java.awt.Dimension(960, 546));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/retour2.png"))); // NOI18N
@@ -48,8 +52,12 @@ public class SupprimerFilm extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 95, 51));
 
-        jTextField1.setText("jTextField1");
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 200, 125, -1));
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 200, 120, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("NOM DU FILM");
@@ -65,13 +73,15 @@ public class SupprimerFilm extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton2.setText("Valider");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 250, -1, -1));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 260, -1, -1));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/ESAIEE.png"))); // NOI18N
-        jLabel4.setMaximumSize(new java.awt.Dimension(960, 536));
-        jLabel4.setMinimumSize(new java.awt.Dimension(960, 536));
-        jLabel4.setPreferredSize(new java.awt.Dimension(960, 536));
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/ESAIEE.png"))); // NOI18N
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -84,6 +94,39 @@ public class SupprimerFilm extends javax.swing.JFrame {
        fermer();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+        SupprimerFilm(jTextField1.getText());
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+     
+    
+    
+     public void SupprimerFilm(String nom) {
+        Connection conn;
+        JDBConnector jdbc = new JDBConnector();
+        conn = jdbc.CreateConnection();
+        try {
+            String requete = "DELETE FROM film where nom='" + nom + "'";
+            System.out.println(requete);
+            Statement st = conn.createStatement();
+            int rs = st.executeUpdate(requete);
+            if (rs > 0) {
+                System.out.println("Le nombre de film supprimé de la base de donnée est de : " + rs);
+            }
+            if (rs == 0) {
+                System.out.println("Votre requete n'a apporté aucune modification.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+     
+   
     /**
      * @param args the command line arguments
      */
@@ -125,7 +168,7 @@ public class SupprimerFilm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

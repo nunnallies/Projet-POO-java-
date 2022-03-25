@@ -40,15 +40,16 @@ public class reduction extends javax.swing.JFrame {
         jCheckBox8 = new javax.swing.JCheckBox();
         jCheckBox9 = new javax.swing.JCheckBox();
         jCheckBox10 = new javax.swing.JCheckBox();
-        jCheckBox11 = new javax.swing.JCheckBox();
-        jCheckBox12 = new javax.swing.JCheckBox();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jCheckBox4 = new javax.swing.JCheckBox();
+        jCheckBox1 = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Bienvune à vous !");
@@ -60,11 +61,21 @@ public class reduction extends javax.swing.JFrame {
 
         jCheckBox7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jCheckBox7.setText("-20%");
-        getContentPane().add(jCheckBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 210, -1, -1));
+        jCheckBox7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox7ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jCheckBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 220, -1, -1));
 
         jCheckBox8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jCheckBox8.setText("-30%");
-        getContentPane().add(jCheckBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 210, -1, -1));
+        jCheckBox8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox8ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jCheckBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 260, -1, -1));
 
         jCheckBox9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jCheckBox9.setText("-50%");
@@ -73,7 +84,7 @@ public class reduction extends javax.swing.JFrame {
                 jCheckBox9ActionPerformed(evt);
             }
         });
-        getContentPane().add(jCheckBox9, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 260, -1, -1));
+        getContentPane().add(jCheckBox9, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, -1, -1));
 
         jCheckBox10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jCheckBox10.setText("-60%");
@@ -82,23 +93,11 @@ public class reduction extends javax.swing.JFrame {
                 jCheckBox10ActionPerformed(evt);
             }
         });
-        getContentPane().add(jCheckBox10, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 260, -1, -1));
-
-        jCheckBox11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jCheckBox11.setText("Tous");
-        getContentPane().add(jCheckBox11, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 330, -1, -1));
-
-        jCheckBox12.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jCheckBox12.setText("Membre");
-        getContentPane().add(jCheckBox12, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 330, -1, -1));
+        getContentPane().add(jCheckBox10, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 300, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setText("% OFF");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, 70, -1));
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel3.setText("Pour");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 322, 60, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, 70, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
@@ -126,6 +125,30 @@ public class reduction extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 50));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/spotG.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -90, 510, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/spotD.png"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, -90, 600, -1));
+
+        jCheckBox4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jCheckBox4.setText("-40%");
+        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, -1, -1));
+
+        jCheckBox1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jCheckBox1.setText("-10%");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -143,9 +166,54 @@ public class reduction extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+       
+        if (jCheckBox7.isSelected()) {Reduction(20);}
+        if (jCheckBox8.isSelected()) {Reduction(30);}
+        if (jCheckBox9.isSelected()) {Reduction(50);}
+        if (jCheckBox10.isSelected()) {Reduction(60);}
+        if (jCheckBox1.isSelected()) {Reduction(10);}
+        if (jCheckBox4.isSelected()) {Reduction(40);}
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jCheckBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox7ActionPerformed
+
+    private void jCheckBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox8ActionPerformed
+
+    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox4ActionPerformed
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
     
+    public void Reduction(int pourcentage) {
+
+        Connection conn;
+        JDBConnector jdbc = new JDBConnector();
+        conn = jdbc.CreateConnection();
+        try {
+            String requete = "INSERT INTO reduction (`Pourcentage`) VALUES ('" + pourcentage + "')";
+            Statement st = conn.createStatement();
+            int rs = st.executeUpdate(requete);
+
+            if (rs > 0) {
+                System.out.println("Le nombre de réduction ajouté à la base de donnée est de : " + rs);
+            }
+            if (rs == 0) {
+                System.out.println("Votre requete n'a apporté aucune modification.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+       
+    }
     
     
     /**
@@ -186,16 +254,17 @@ public class reduction extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox10;
-    private javax.swing.JCheckBox jCheckBox11;
-    private javax.swing.JCheckBox jCheckBox12;
+    private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JCheckBox jCheckBox7;
     private javax.swing.JCheckBox jCheckBox8;
     private javax.swing.JCheckBox jCheckBox9;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }
