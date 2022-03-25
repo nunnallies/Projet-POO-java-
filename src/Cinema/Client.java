@@ -23,5 +23,9 @@ public  class Client {
         this.nom = nom;
         this.numeroclient = numeroclient;
     }
+    
+    public Compte CreerUnCompte(int numeroclient,String nom,String prenom,String adresse,String mail,String pseudonyme,String mail){
+        
+    }
 
 }

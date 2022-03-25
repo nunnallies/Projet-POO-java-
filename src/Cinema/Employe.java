@@ -75,6 +75,7 @@ public class Employe {
         conn = jdbc.CreateConnection();
         try {
             String requete = "INSERT INTO reduction (`Pourcentage`) VALUES ('" + pourcentage + "')";
+            System.out.println(requete);
             Statement st = conn.createStatement();
             int rs = st.executeUpdate(requete);
 
@@ -97,6 +98,7 @@ public class Employe {
         conn = jdbc.CreateConnection();
         try {
             String requete = "INSERT INTO seance (`Lieu`,`Date`,`Heure`,`NumeroSalle`) VALUES ('" + Lieu + "','" + date + "','" + heure + "','" + numerosalle + "')";
+            System.out.println(requete);
             Statement st = conn.createStatement();
             int rs = st.executeUpdate(requete);
 
@@ -107,6 +109,7 @@ public class Employe {
                 System.out.println("Votre requete n'a apporté aucune modification.");
             }
             requete = "INSERT INTO projeter (`NumeroSeance`,`IDFILM`,`matriculeemploye`) VALUES ('" + numeroseance + "','" + idfilm + "','" + matriculeemploye + "')";
+            System.out.println(requete);
             st = conn.createStatement();
             rs = st.executeUpdate(requete);
 
@@ -131,6 +134,7 @@ public class Employe {
         conn = jdbc.CreateConnection();
         try {
             String requete = "DELETE FROM film where nom='" + nom + "'";
+            System.out.println(requete);
             Statement st = conn.createStatement();
             int rs = st.executeUpdate(requete);
             if (rs > 0) {
@@ -144,14 +148,15 @@ public class Employe {
         }
 
     }
-    
-    public void SupprimerReduction(int pourcentage){
-         Connection conn;
+
+    public void SupprimerReduction(int pourcentage) {
+        Connection conn;
         JDBConnector jdbc = new JDBConnector();
         conn = jdbc.CreateConnection();
         try {
             String requete = "DELETE FROM reduction where pourcentage='" + pourcentage + "'";
             Statement st = conn.createStatement();
+            System.out.println(requete);
             int rs = st.executeUpdate(requete);
             if (rs > 0) {
                 System.out.println("Le nombre de réduction supprimée de la base de donnée est de : " + rs);
@@ -162,13 +167,39 @@ public class Employe {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        
+
     }
-    
-    
-    
-    
-    
+
+    public void SupprimerSeance(int numeroseance, int numerosalle, int idfilm) {
+        Connection conn;
+        JDBConnector jdbc = new JDBConnector();
+        conn = jdbc.CreateConnection();
+        try {
+            String requete = "DELETE FROM seance where NumeroSeance='" + numeroseance + "' AND NumeroSalle='" + numerosalle + "'";
+            System.out.println(requete);
+            Statement st = conn.createStatement();
+            int rs = st.executeUpdate(requete);
+            if (rs > 0) {
+                System.out.println("Le nombre de seance supprimée de la base de donnée est de : " + rs);
+            }
+            if (rs == 0) {
+                System.out.println("Votre requete n'a apporté aucune modification.");
+            }
+            requete = "DELETE FROM projeter where NumeroSeance='" + numeroseance + "' AND NumeroSalle='" + numerosalle + "' AND IDFILM='"+idfilm+"'";
+            System.out.println(requete);
+            st = conn.createStatement();
+            rs = st.executeUpdate(requete);
+            if (rs > 0) {
+                System.out.println("Le nombre de seance supprimée de la base de donnée est de : " + rs);
+            }
+            if (rs == 0) {
+                System.out.println("Votre requete n'a apporté aucune modification.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
     
     
 
