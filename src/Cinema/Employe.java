@@ -145,6 +145,31 @@ public class Employe {
 
     }
     
+    public void SupprimerReduction(int pourcentage){
+         Connection conn;
+        JDBConnector jdbc = new JDBConnector();
+        conn = jdbc.CreateConnection();
+        try {
+            String requete = "DELETE FROM reduction where pourcentage='" + pourcentage + "'";
+            Statement st = conn.createStatement();
+            int rs = st.executeUpdate(requete);
+            if (rs > 0) {
+                System.out.println("Le nombre de réduction supprimée de la base de donnée est de : " + rs);
+            }
+            if (rs == 0) {
+                System.out.println("Votre requete n'a apporté aucune modification.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+    }
+    
+    
+    
+    
+    
+    
     
 
 }

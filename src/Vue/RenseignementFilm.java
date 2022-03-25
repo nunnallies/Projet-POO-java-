@@ -224,12 +224,9 @@ public class RenseignementFilm extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-<<<<<<< HEAD
-        
-        AjouterUnFilm(1,"Un Film","Anais Mongolo",new Date(System.currentTimeMillis()),"Un synopsis.",8,6,80000);
-=======
+
         AjouterUnFilm(jTextField1.getText(),jTextField2.getText(),jTextField5.getText(),jTextField3.getText(),jTextField10.getText(),jTextField7.getText(),jTextField9.getText(),jTextField4.getText());
->>>>>>> ede910a9209a8feb099721a2ec84670cfd2665e3
+
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -237,11 +234,9 @@ public class RenseignementFilm extends javax.swing.JFrame {
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
-<<<<<<< HEAD
- public void AjouterUnFilm(int MatriculeEmploye, String NomFilm, String Realisateur, Date DateDeParution, String Synopsis, float NoteDePresse, float NoteDeSpec, int Duree) {
-=======
+
  public void AjouterUnFilm(String NomFilm, String Realisateur, String DateDeParution, String Synopsis, String NoteDePresse, String NoteDeSpec, String MatriculeEmploye,String Duree) {
->>>>>>> ede910a9209a8feb099721a2ec84670cfd2665e3
+
         Connection conn = null;
         JDBConnector jdbc = new JDBConnector();
         conn = jdbc.CreateConnection();
