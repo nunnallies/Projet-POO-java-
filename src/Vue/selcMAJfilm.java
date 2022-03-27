@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import projetjava.utils.JDBConnector;
 
 /**
@@ -88,31 +89,6 @@ public class selcMAJfilm extends javax.swing.JFrame {
 
     
     
-    
-    public boolean SupprimerFilm(String film4) {
-        Connection conn;
-        JDBConnector jdbc = new JDBConnector();
-        conn = jdbc.CreateConnection();
-        int a=-1;
-        try {
-            PreparedStatement st = conn.prepareStatement("DELETE from film WHERE Nom='" + film4 + "'");
-            ResultSet rs = st.executeQuery();
-            while (rs.next()){
-                 a=rs.getInt(WIDTH);
-            }
-
-            
-        } catch (SQLException e) {
-            System.out.println("Error Occured " + e.toString());
-        }
-        System.out.println("Le nombre d'element répondant aux criteres est de :" + a);
-        if (a==0){
-            return false; 
-        } 
-        else{
-            return true;
-        }
-    }
     
     
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

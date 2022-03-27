@@ -31,6 +31,7 @@ public class Client {
         this.numeroclient = numeroclient;
     }
 
+
     public boolean VerifierExistenceCompte(String pseudonyme, String mdp) {
         Connection conn;
         JDBConnector jdbc = new JDBConnector();
@@ -53,6 +54,7 @@ public class Client {
             return true;
         }
     }
+
 
     public Compte CreerUnCompte(int numeroclient, String mail, String pseudonyme, String motdepasse) {
         Connection conn = null;
