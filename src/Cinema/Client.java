@@ -84,7 +84,7 @@ public class Client {
         JDBConnector jdbc = new JDBConnector();
         conn = jdbc.CreateConnection();
         try {
-            String requete = "INSERT INTO film (`nbclient`, `Categorie`, `prix`, `numeroseance`,`numeroclient`,`rangee`,`alle`) VALUES ('" +nbclient+ "','" +Categorie + "','" +prix+ "','" +numeroseance+"','"+numeroclient+"','"+rangee+"','"+allee+"')";
+            String requete = "INSERT INTO film (`nbclient`, `Categorie`, `prix`, `numeroseance`,`numeroclient`,`rangee`,`alle`) VALUES ('" + nbclient + "','" + Categorie + "','" + prix + "','" + numeroseance + "','" + numeroclient + "','" + rangee + "','" + allee + "')";
             Statement st = conn.createStatement();
             System.out.println(requete);
             int rs = st.executeUpdate(requete);
@@ -100,9 +100,57 @@ public class Client {
         }
 
     }
+
+    public void PayerFacture(int prix, String lieu, String Date, int IDreduction, int numeroclient, int numerobillet) {
+        Connection conn = null;
+        JDBConnector jdbc = new JDBConnector();
+        conn = jdbc.CreateConnection();
+        try {
+            String requete = "INSERT INTO film (`prix`, `lieu`, `Date`, `IDREDUCTION`,`numeroclient`,`numerobillet`) VALUES ('" + prix + "','" + lieu + "','" + Date + "','" + IDreduction + "','" + numeroclient + "','" + numerobillet + "')";
+            Statement st = conn.createStatement();
+            System.out.println(requete);
+            int rs = st.executeUpdate(requete);
+            if (rs > 0) {
+                System.out.println("Le nombre de compte  ajouté à la base de donnée est de : " + rs);
+            }
+            if (rs == 0) {
+                System.out.println("Votre requete n'a apporté aucune modification.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void SupprimerReservation(int numerobillet, int numeroclient){
+        Connection conn;
+        JDBConnector jdbc = new JDBConnector();
+        conn = jdbc.CreateConnection();
+        try {
+            String requete = "DELETE FROM facture where NumeroBillet='" + numerobillet + "' AND NumeroClient='" + numeroclient + "'";
+            System.out.println(requete);
+            Statement st = conn.createStatement();
+            int rs = st.executeUpdate(requete);
+            if (rs > 0) {
+                System.out.println("Le nombre de facture supprimé de la base de donnée est de : " + rs);
+            }
+            if (rs == 0) {
+                System.out.println("Votre requete n'a apporté aucune modification.");
+            }
+            requete = "DELETE FROM billet where NumeroBillet='"+numerobillet+"'AND NumeroClient='"+numeroclient+"'";
+            System.out.println(requete);
+            st = conn.createStatement();
+            rs = st.executeUpdate(requete);
+            if (rs > 0) {
+                System.out.println("Le nombre de billet supprimé de la base de donnée est de : " + rs);
+            }
+            if (rs == 0) {
+                System.out.println("Votre requete n'a apporté aucune modification.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
     
-    public void PayerFacture(int prix,String lieu,String Date,int IDreduction,)
-    
-    
+
     
 }
