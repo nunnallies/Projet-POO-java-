@@ -3,29 +3,53 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Cinema;
-import java.sql.*;
 
+import static java.awt.image.ImageObserver.WIDTH;
+import java.sql.*;
+import projetjava.utils.JDBConnector;
 
 /**
  *
  * @author Naiss
  */
-public class Compte   {
-    int numerocompte,numeroclient,age; 
-    String MotDePasse,pseudonyme;
-    String nom, prenom, adresse, mail;
-    
-    Compte (int numerocompte,int numeroclient,String nom,String prenom,int age, String adresse,String mail,String pseudonyme,String MotDePasse){
-        this.prenom=prenom; 
-        this.pseudonyme=pseudonyme;
-        this.adresse=adresse; 
-        this.age=age;
-        this.mail=mail;
-        this.MotDePasse=MotDePasse;
-        this.numeroclient=numeroclient;
-        this.numerocompte=numerocompte;
-        this.nom=nom;
+public class Compte {
+
+    int numerocompte, numeroclient;
+    String MotDePasse, pseudonyme;
+    String mail;
+
+    Compte(int numeroclient, String mail, String pseudonyme, String MotDePasse) {
+
+        this.pseudonyme = pseudonyme;
+
+        this.mail = mail;
+        this.MotDePasse = MotDePasse;
+        this.numeroclient = numeroclient;
+        this.numerocompte = numerocompte;
+
     }
-   
     
- }
+    public boolean VerifierExistenceCompte(String pseudonyme,String mdp){
+        Connection conn;
+        JDBConnector jdbc = new JDBConnector();
+        conn = jdbc.CreateConnection();
+        int a = -1;
+        try {
+            PreparedStatement st = conn.prepareStatement("SELECT count(*) from compte WHERE pseudonyme='" + pseudonyme + "' AND motdepasse='" + mdp + "'");
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                a = rs.getInt(WIDTH);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error Occured " + e.toString());
+        }
+        System.out.println("Le nombre d'element répondant aux criteres est de :" + a);
+        if (a == 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+}
