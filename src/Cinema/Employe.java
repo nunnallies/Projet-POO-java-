@@ -45,12 +45,12 @@ public class Employe {
 
     }
 
-    public Film AjouterUnFilm(int MatriculeEmploye, String NomFilm, String Realisateur, Date DateDeParution, String Synopsis, float NoteDePresse, float NoteDeSpec) {
+    public void AjouterUnFilm(String MatriculeEmploye, String NomFilm, String Realisateur, Date DateDeParution, String Synopsis, String NoteDePresse, String NoteDeSpec, String Duree,String path) {
         Connection conn = null;
         JDBConnector jdbc = new JDBConnector();
         conn = jdbc.CreateConnection();
         try {
-            String requete = "INSERT INTO film (`Nom`, `Realisateur`, `DateDeParution`, `Synopsis`, `NoteDePresse`, `NoteDeSpectateurs`, `NombreSpec`, `matriculeemploye`) VALUES ('" + NomFilm + "','" + Realisateur + "','" + DateDeParution + "','" + Synopsis + "','" + NoteDePresse + "','" + NoteDeSpec + "')";
+            String requete = "INSERT INTO film (`Nom`, `Realisateur`, `DateDeParution`, `Synopsis`, `NoteDePresse`, `NoteDeSpectateurs`, `matriculeemploye`,`Duree`,`path`) VALUES ('" + NomFilm + "','" + Realisateur + "','" + DateDeParution + "','" + Synopsis + "','" + NoteDePresse + "','" + NoteDeSpec +"','"+MatriculeEmploye+"','"+Duree+"','"+path+"')";
             Statement st = conn.createStatement();
             int rs = st.executeUpdate(requete);
             if (rs > 0) {
@@ -63,8 +63,7 @@ public class Employe {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        Film nouveaufilm = new Film(NomFilm, Realisateur, DateDeParution, NoteDePresse, NoteDeSpec, Synopsis, MatriculeEmploye);
-        return nouveaufilm;
+       
 
     }
 
