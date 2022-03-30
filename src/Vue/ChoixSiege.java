@@ -91,104 +91,104 @@ public class ChoixSiege extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/siege(petit).png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(560, 250, 75, 77);
+        jLabel1.setBounds(560, 250, 75, 16);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/siege_pris.png"))); // NOI18N
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(710, 250, 72, 77);
+        jLabel2.setBounds(710, 250, 72, 16);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/siege.png"))); // NOI18N
         jLabel3.setText("jLabel3");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(440, 390, 99, 102);
+        jLabel3.setBounds(440, 390, 99, 16);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/siege.png"))); // NOI18N
         jLabel4.setText("jLabel3");
         jLabel4.setName(""); // NOI18N
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(550, 390, 99, 102);
+        jLabel4.setBounds(550, 390, 99, 16);
         jLabel4.getAccessibleContext().setAccessibleDescription("");
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/siege.png"))); // NOI18N
         jLabel5.setText("jLabel3");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(320, 390, 99, 102);
+        jLabel5.setBounds(320, 390, 99, 16);
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/siege.png"))); // NOI18N
         jLabel12.setText("jLabel3");
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(830, 390, 99, 102);
+        jLabel12.setBounds(830, 390, 99, 16);
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/siege.png"))); // NOI18N
         jLabel13.setText("jLabel3");
         getContentPane().add(jLabel13);
-        jLabel13.setBounds(940, 390, 99, 102);
+        jLabel13.setBounds(940, 390, 99, 16);
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/siege.png"))); // NOI18N
         jLabel14.setText("jLabel3");
         getContentPane().add(jLabel14);
-        jLabel14.setBounds(710, 390, 99, 102);
+        jLabel14.setBounds(710, 390, 99, 16);
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/siege.png"))); // NOI18N
         jLabel15.setText("jLabel3");
         getContentPane().add(jLabel15);
-        jLabel15.setBounds(830, 540, 99, 102);
+        jLabel15.setBounds(830, 540, 99, 16);
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/siege.png"))); // NOI18N
         jLabel16.setText("jLabel3");
         getContentPane().add(jLabel16);
-        jLabel16.setBounds(940, 540, 99, 102);
+        jLabel16.setBounds(940, 540, 99, 16);
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/siege.png"))); // NOI18N
         jLabel17.setText("jLabel3");
         getContentPane().add(jLabel17);
-        jLabel17.setBounds(710, 540, 99, 102);
+        jLabel17.setBounds(710, 540, 99, 16);
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/siege.png"))); // NOI18N
         jLabel18.setText("jLabel3");
         getContentPane().add(jLabel18);
-        jLabel18.setBounds(830, 700, 99, 102);
+        jLabel18.setBounds(830, 700, 99, 16);
 
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/siege.png"))); // NOI18N
         jLabel19.setText("jLabel3");
         getContentPane().add(jLabel19);
-        jLabel19.setBounds(940, 700, 99, 102);
+        jLabel19.setBounds(940, 700, 99, 16);
 
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/siege.png"))); // NOI18N
         jLabel20.setText("jLabel3");
         getContentPane().add(jLabel20);
-        jLabel20.setBounds(710, 700, 99, 102);
+        jLabel20.setBounds(710, 700, 99, 16);
 
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/siege.png"))); // NOI18N
         jLabel21.setText("jLabel3");
         getContentPane().add(jLabel21);
-        jLabel21.setBounds(440, 540, 99, 102);
+        jLabel21.setBounds(440, 540, 99, 16);
 
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/siege.png"))); // NOI18N
         jLabel22.setText("jLabel3");
         getContentPane().add(jLabel22);
-        jLabel22.setBounds(550, 540, 99, 102);
+        jLabel22.setBounds(550, 540, 99, 16);
 
         jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/siege.png"))); // NOI18N
         jLabel23.setText("jLabel3");
         getContentPane().add(jLabel23);
-        jLabel23.setBounds(320, 540, 99, 102);
+        jLabel23.setBounds(320, 540, 99, 16);
 
         jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/siege.png"))); // NOI18N
         jLabel24.setText("jLabel3");
         getContentPane().add(jLabel24);
-        jLabel24.setBounds(440, 700, 99, 102);
+        jLabel24.setBounds(440, 700, 99, 16);
 
         jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/siege.png"))); // NOI18N
         jLabel25.setText("jLabel3");
         getContentPane().add(jLabel25);
-        jLabel25.setBounds(550, 700, 99, 102);
+        jLabel25.setBounds(550, 700, 99, 16);
 
         jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/siege.png"))); // NOI18N
         jLabel26.setText("jLabel3");
         getContentPane().add(jLabel26);
-        jLabel26.setBounds(320, 700, 99, 102);
+        jLabel26.setBounds(320, 700, 99, 16);
 
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Siège libre");

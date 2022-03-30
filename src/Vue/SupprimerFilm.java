@@ -90,7 +90,7 @@ public class SupprimerFilm extends javax.swing.JFrame {
 
     }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       new selcMAJfilm().setVisible(true);
+       new MAJfilm().setVisible(true);
        fermer();
     }//GEN-LAST:event_jButton1ActionPerformed
 

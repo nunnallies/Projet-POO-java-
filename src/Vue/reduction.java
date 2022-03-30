@@ -4,6 +4,7 @@
  */
 package Vue;
 
+
 import Cinema.*;
 import java.awt.Color;
 import java.sql.Connection;
