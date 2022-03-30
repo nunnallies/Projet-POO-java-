@@ -46,14 +46,22 @@ public class Employe {
         }
     }
 
+<<<<<<< HEAD
     public void AjouterUnFilm(String NomFilm, String Realisateur, String DateDeParution, String Synopsis, String NoteDePresse, String NoteDeSpec, String MatriculeEmploye,String Duree) {
 
+=======
+    public void AjouterUnFilm(String MatriculeEmploye, String NomFilm, String Realisateur, Date DateDeParution, String Synopsis, String NoteDePresse, String NoteDeSpec, String Duree,String path) {
+>>>>>>> ce04d86dde43f51a70966151259024ecbd5b1315
         Connection conn = null;
         JDBConnector jdbc = new JDBConnector();
         conn = jdbc.CreateConnection();
         try {
+<<<<<<< HEAD
             String requete = "INSERT INTO film (`Nom`,`Realisateur`,`DateDeParution`,`Synopsis`,`NoteDePresse`,`NoteDeSpectateurs`,`matriculeemploye`,`Duree`) VALUES ('"+NomFilm+"','"+Realisateur+"','"+DateDeParution +"','"+Synopsis+"','"+NoteDePresse+"','"+NoteDeSpec+"','"+MatriculeEmploye+"','"+Duree+"')";
             System.out.println(requete);
+=======
+            String requete = "INSERT INTO film (`Nom`, `Realisateur`, `DateDeParution`, `Synopsis`, `NoteDePresse`, `NoteDeSpectateurs`, `matriculeemploye`,`Duree`,`path`) VALUES ('" + NomFilm + "','" + Realisateur + "','" + DateDeParution + "','" + Synopsis + "','" + NoteDePresse + "','" + NoteDeSpec +"','"+MatriculeEmploye+"','"+Duree+"','"+path+"')";
+>>>>>>> ce04d86dde43f51a70966151259024ecbd5b1315
             Statement st = conn.createStatement();
             int rs = st.executeUpdate(requete);
             if (rs > 0) {
@@ -66,7 +74,11 @@ public class Employe {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+<<<<<<< HEAD
  }
+=======
+       
+>>>>>>> ce04d86dde43f51a70966151259024ecbd5b1315
 
     public void Reduction(int pourcentage) {
 

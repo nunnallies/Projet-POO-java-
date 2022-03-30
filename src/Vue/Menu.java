@@ -77,7 +77,11 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+<<<<<<< HEAD
         new AppercuClient().setVisible(true);
+=======
+        new PageAccueilClient().setVisible(true);
+>>>>>>> ce04d86dde43f51a70966151259024ecbd5b1315
         fermer();
       
         

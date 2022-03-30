@@ -31,7 +31,6 @@ public class Client {
         this.numeroclient = numeroclient;
     }
 
-
     public boolean VerifierExistenceCompte(String pseudonyme, String mdp) {
         Connection conn;
         JDBConnector jdbc = new JDBConnector();
@@ -54,7 +53,6 @@ public class Client {
             return true;
         }
     }
-
 
     public Compte CreerUnCompte(int numeroclient, String mail, String pseudonyme, String motdepasse) {
         Connection conn = null;
@@ -121,7 +119,7 @@ public class Client {
         }
     }
 
-    public void SupprimerReservation(int numerobillet, int numeroclient){
+    public void SupprimerReservation(int numerobillet, int numeroclient) {
         Connection conn;
         JDBConnector jdbc = new JDBConnector();
         conn = jdbc.CreateConnection();
@@ -136,7 +134,7 @@ public class Client {
             if (rs == 0) {
                 System.out.println("Votre requete n'a apporté aucune modification.");
             }
-            requete = "DELETE FROM billet where NumeroBillet='"+numerobillet+"'AND NumeroClient='"+numeroclient+"'";
+            requete = "DELETE FROM billet where NumeroBillet='" + numerobillet + "'AND NumeroClient='" + numeroclient + "'";
             System.out.println(requete);
             st = conn.createStatement();
             rs = st.executeUpdate(requete);
@@ -150,7 +148,34 @@ public class Client {
             e.printStackTrace();
         }
     }
-    
 
-    
+    /*public String VoirBillets(int numeroclient) {
+        Connection conn;
+        JDBConnector jdbc = new JDBConnector();
+        conn = jdbc.CreateConnection();
+        int a = 0; //sert à dimensionner la taille de la JTable
+        try {
+            PreparedStatement st = conn.prepareStatement("SELECT count(*) from billet WHERE NumeroClient='" + numeroclient + "'");
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                a = rs.getInt(numeroclient);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        String donnes[][]=new String[a][8];
+        try{
+            String requete="SELECT * from billet WHERE NumeroClient="+numeroclient+"'";
+            System.out.println(requete);
+            Statement st=conn.createStatement();
+            
+            
+            
+            
+        }
+        
+        
+
+    }*/
+
 }
