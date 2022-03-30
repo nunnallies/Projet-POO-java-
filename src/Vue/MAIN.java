@@ -4,6 +4,11 @@
  */
 package Vue;
 
+import Cinema.Employe;
+import Vue.AppercuEmplyé;
+import Vue.Menu;
+
+
 /**
  *
  * @author XPS
@@ -13,6 +18,8 @@ public class MAIN {
     public static void main(String[] args){
         
         new Menu().setVisible(true);
+        
+        
         
     }
     

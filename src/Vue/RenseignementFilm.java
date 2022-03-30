@@ -3,14 +3,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vue;
-import Cinema.Film;
+
+
 import Cinema.*;
 import java.sql.*;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.sql.Statement;
-import projetjava.utils.JDBConnector;
+import DAO.JDBConnector;
 
 /**
  *
@@ -50,7 +51,6 @@ public class RenseignementFilm extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jTextField10 = new javax.swing.JTextField();
@@ -60,7 +60,8 @@ public class RenseignementFilm extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Bienvenue à vous !");
         setMaximumSize(new java.awt.Dimension(960, 536));
         setMinimumSize(new java.awt.Dimension(960, 536));
         setPreferredSize(new java.awt.Dimension(960, 536));
@@ -139,9 +140,6 @@ public class RenseignementFilm extends javax.swing.JFrame {
         jLabel6.setText("Note De Presse  ");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 170, -1, 22));
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 270, -1, -1));
-
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel8.setText("Duree ");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, 82, -1));
@@ -170,7 +168,7 @@ public class RenseignementFilm extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 390, -1, -1));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/retour2.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z21retour2.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -183,8 +181,8 @@ public class RenseignementFilm extends javax.swing.JFrame {
         jLabel11.setText("AJOUT FILM");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 80, -1, -1));
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/ticket3.png"))); // NOI18N
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, -50, 430, 240));
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z30ticket3.png"))); // NOI18N
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, -50, 300, 240));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -224,8 +222,8 @@ public class RenseignementFilm extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-
-        AjouterUnFilm(jTextField1.getText(),jTextField2.getText(),jTextField5.getText(),jTextField3.getText(),jTextField10.getText(),jTextField7.getText(),jTextField9.getText(),jTextField4.getText());
+        Employe employe = new Employe();
+        employe.AjouterUnFilm(jTextField1.getText(),jTextField2.getText(),jTextField5.getText(),jTextField3.getText(),jTextField10.getText(),jTextField7.getText(),jTextField9.getText(),jTextField4.getText());
 
         
         
@@ -235,27 +233,7 @@ public class RenseignementFilm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
 
- public void AjouterUnFilm(String NomFilm, String Realisateur, String DateDeParution, String Synopsis, String NoteDePresse, String NoteDeSpec, String MatriculeEmploye,String Duree) {
 
-        Connection conn = null;
-        JDBConnector jdbc = new JDBConnector();
-        conn = jdbc.CreateConnection();
-        try {
-            String requete = "INSERT INTO film (`Nom`,`Realisateur`,`DateDeParution`,`Synopsis`,`NoteDePresse`,`NoteDeSpectateurs`,`matriculeemploye`,`Duree`) VALUES ('"+NomFilm+"','"+Realisateur+"','"+DateDeParution +"','"+Synopsis+"','"+NoteDePresse+"','"+NoteDeSpec+"','"+MatriculeEmploye+"','"+Duree+"')";
-            System.out.println(requete);
-            Statement st = conn.createStatement();
-            int rs = st.executeUpdate(requete);
-            if (rs > 0) {
-                System.out.println("Le nombre de film ajouté à la base de donnée est de : " + rs);
-            }
-            if (rs == 0) {
-                System.out.println("Votre requete n'a apporté aucune modification.");
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
- }
     /**
      * @param args the command line arguments
      */
@@ -303,7 +281,6 @@ public class RenseignementFilm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextField1;

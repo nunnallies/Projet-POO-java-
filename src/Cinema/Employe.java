@@ -9,7 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import projetjava.utils.JDBConnector;
+import DAO.JDBConnector;
 import java.sql.*;
 
 /**
@@ -21,36 +21,39 @@ public class Employe {
     String nom, prenom, login, motdepasse;
     Date debutcontrat;
 
-    public boolean VerifierExistenceEmploye(String pseudonyme, String mdp) {
+   public boolean VerifierExistenceEmploye(String pseudonyme, String mdp) {
         Connection conn;
         JDBConnector jdbc = new JDBConnector();
         conn = jdbc.CreateConnection();
-        int a = -1;
+        int a=-1;
         try {
             PreparedStatement st = conn.prepareStatement("SELECT count(*) from employe WHERE login='" + pseudonyme + "' AND motdepasse='" + mdp + "'");
             ResultSet rs = st.executeQuery();
-            while (rs.next()) {
-                a = rs.getInt(WIDTH);
+            while (rs.next()){
+                 a=rs.getInt(WIDTH);
             }
 
+            
         } catch (SQLException e) {
             System.out.println("Error Occured " + e.toString());
         }
         System.out.println("Le nombre d'element répondant aux criteres est de :" + a);
-        if (a == 0) {
-            return false;
-        } else {
+        if (a==0){
+            return false; 
+        } 
+        else{
             return true;
         }
-
     }
 
-    public Film AjouterUnFilm(int MatriculeEmploye, String NomFilm, String Realisateur, Date DateDeParution, String Synopsis, float NoteDePresse, float NoteDeSpec) {
+    public void AjouterUnFilm(String NomFilm, String Realisateur, String DateDeParution, String Synopsis, String NoteDePresse, String NoteDeSpec, String MatriculeEmploye,String Duree) {
+
         Connection conn = null;
         JDBConnector jdbc = new JDBConnector();
         conn = jdbc.CreateConnection();
         try {
-            String requete = "INSERT INTO film (`Nom`, `Realisateur`, `DateDeParution`, `Synopsis`, `NoteDePresse`, `NoteDeSpectateurs`, `NombreSpec`, `matriculeemploye`) VALUES ('" + NomFilm + "','" + Realisateur + "','" + DateDeParution + "','" + Synopsis + "','" + NoteDePresse + "','" + NoteDeSpec + "')";
+            String requete = "INSERT INTO film (`Nom`,`Realisateur`,`DateDeParution`,`Synopsis`,`NoteDePresse`,`NoteDeSpectateurs`,`matriculeemploye`,`Duree`) VALUES ('"+NomFilm+"','"+Realisateur+"','"+DateDeParution +"','"+Synopsis+"','"+NoteDePresse+"','"+NoteDeSpec+"','"+MatriculeEmploye+"','"+Duree+"')";
+            System.out.println(requete);
             Statement st = conn.createStatement();
             int rs = st.executeUpdate(requete);
             if (rs > 0) {
@@ -63,19 +66,15 @@ public class Employe {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        Film nouveaufilm = new Film(NomFilm, Realisateur, DateDeParution, NoteDePresse, NoteDeSpec, Synopsis, MatriculeEmploye);
-        return nouveaufilm;
+ }
 
-    }
-
-    public Reduction AjouterUneReduction(int pourcentage) {
+    public void Reduction(int pourcentage) {
 
         Connection conn;
         JDBConnector jdbc = new JDBConnector();
         conn = jdbc.CreateConnection();
         try {
             String requete = "INSERT INTO reduction (`Pourcentage`) VALUES ('" + pourcentage + "')";
-            System.out.println(requete);
             Statement st = conn.createStatement();
             int rs = st.executeUpdate(requete);
 
@@ -88,16 +87,16 @@ public class Employe {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        Reduction nouvellereduc = new Reduction(pourcentage);
-        return nouvellereduc;
+       
     }
+    
 
-    public Seance ProgrammerSeance(int numeroseance, String Lieu, Date date, int heure, int duree, int numerosalle, int matriculeemploye, int idfilm) {
+     public void ProgrammerSeance(String NumeroSeance, String date, String heure,String DureeSeance,String numerosalle, String idfilm, String matriculeemploye) {
         Connection conn;
         JDBConnector jdbc = new JDBConnector();
         conn = jdbc.CreateConnection();
         try {
-            String requete = "INSERT INTO seance (`Lieu`,`Date`,`Heure`,`NumeroSalle`) VALUES ('" + Lieu + "','" + date + "','" + heure + "','" + numerosalle + "')";
+            String requete = "INSERT INTO seance (`NumeroSeance`,`Date`,`Heure`,`DureeSeance`,`NumeroSalle`) VALUES ('"+NumeroSeance+"','"+date+"','"+heure+"','"+DureeSeance+"','"+numerosalle+"')";
             System.out.println(requete);
             Statement st = conn.createStatement();
             int rs = st.executeUpdate(requete);
@@ -108,8 +107,7 @@ public class Employe {
             if (rs == 0) {
                 System.out.println("Votre requete n'a apporté aucune modification.");
             }
-            requete = "INSERT INTO projeter (`NumeroSeance`,`IDFILM`,`matriculeemploye`) VALUES ('" + numeroseance + "','" + idfilm + "','" + matriculeemploye + "')";
-            System.out.println(requete);
+            requete = "INSERT INTO projeter (`NumeroSeance`,`IDFILM`,`matriculeemploye`) VALUES ('" + NumeroSeance + "','" + idfilm + "','" + matriculeemploye + "')";
             st = conn.createStatement();
             rs = st.executeUpdate(requete);
 
@@ -123,12 +121,11 @@ public class Employe {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        Seance nouvelleseance = new Seance(Lieu, date, heure, duree, numerosalle);
-        return nouvelleseance;
+       
 
     }
 
-    public void SupprimerFilm(String nom) {
+     public void SupprimerFilm(String nom) {
         Connection conn;
         JDBConnector jdbc = new JDBConnector();
         conn = jdbc.CreateConnection();
@@ -148,6 +145,7 @@ public class Employe {
         }
 
     }
+     
 
     public void SupprimerReduction(int pourcentage) {
         Connection conn;
