@@ -36,7 +36,8 @@ public class AppercuClient extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Bienvenue à vous !");
         setMaximumSize(new java.awt.Dimension(960, 546));
         setMinimumSize(new java.awt.Dimension(960, 546));
         setPreferredSize(new java.awt.Dimension(960, 546));
@@ -48,23 +49,23 @@ public class AppercuClient extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 160, 230));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 150, 230));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z37tickettttt222.jpg.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/zbillet.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 160, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 210, 150, 230));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/zhistorique3.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/zhistorique.png"))); // NOI18N
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 220, 160, 230));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 210, 150, 230));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
@@ -96,11 +97,12 @@ public class AppercuClient extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        new PageAccueilClient().setVisible(true);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**

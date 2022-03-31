@@ -4,7 +4,7 @@
  */
 package Vue;
 
-import Cinema.Employe;
+
 import Vue.AppercuEmplyé;
 import Vue.Menu;
 

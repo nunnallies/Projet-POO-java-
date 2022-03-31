@@ -8,7 +8,7 @@ import static java.awt.image.ImageObserver.WIDTH;
 import java.sql.*;
 import java.util.*;
 import javax.swing.ImageIcon;
-import projetjava.utils.JDBConnector;
+import DAO.JDBConnector;
 import vue.*;
 
 /**
@@ -56,7 +56,7 @@ public class Film {
         } catch (SQLException e) {
             System.out.println("Error Occured " + e.toString());
         }
-        Object donnee[][]=new String[nb][11];
+        Object donnee[][]=new Object[nb][11];
         try {
             String requete = "SELECT * from film";
             System.out.println(requete);
@@ -76,7 +76,7 @@ public class Film {
                 String Duree=rs.getString("Duree");
                 String url=rs.getString("path");
                 System.out.println(DateDeParution+Synopsis+MatriculeEmploye+ID);
-                //donnee[i][0]=new ImageIcon(url);
+                donnee[i][0]=new ImageIcon(url);
                 donnee[i][1]=nom;
                 donnee[i][2]=realisateur;
                 donnee[i][3]=Duree;

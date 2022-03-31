@@ -53,7 +53,7 @@ public class AchatPlace extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jButton7 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Bienvenue à vous !");
@@ -140,13 +140,13 @@ public class AchatPlace extends javax.swing.JFrame {
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 340, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setText("Veuillez entrez le nom du film");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, -1, -1));
+        jLabel2.setText("Numéro de la séance");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setText("Maintenant, veuillez choisir une place :");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, -1, -1));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 80, 190, -1));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, 50, -1));
 
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z21retour2.png"))); // NOI18N
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -155,9 +155,7 @@ public class AchatPlace extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 100, 50));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z8ciné4.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 60, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -220,10 +218,10 @@ public class AchatPlace extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

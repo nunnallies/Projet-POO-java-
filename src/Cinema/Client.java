@@ -31,6 +31,10 @@ public class Client {
         this.numeroclient = numeroclient;
     }
 
+    public Client() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     public boolean VerifierExistenceCompte(String pseudonyme, String mdp) {
         Connection conn;
         JDBConnector jdbc = new JDBConnector();
@@ -77,12 +81,12 @@ public class Client {
         return compte;
     }
 
-    public void AcheterUnBillet(int nbclient, String Categorie, int prix, int numeroseance, int numeroclient, char rangee, int allee) {
+    public void AcheterUnBillet(String Categorie, String numeroseance, String numeroclient, String rangee, String allee) {
         Connection conn = null;
         JDBConnector jdbc = new JDBConnector();
         conn = jdbc.CreateConnection();
         try {
-            String requete = "INSERT INTO film (`nbclient`, `Categorie`, `prix`, `numeroseance`,`numeroclient`,`rangee`,`alle`) VALUES ('" + nbclient + "','" + Categorie + "','" + prix + "','" + numeroseance + "','" + numeroclient + "','" + rangee + "','" + allee + "')";
+            String requete = "INSERT INTO film (`Categorie`,`numeroseance`,`numeroclient`,`rangee`,`alle`) VALUES ('" + Categorie + "','" + numeroseance + "','" + numeroclient + "','" + rangee + "','" + allee + "')";
             Statement st = conn.createStatement();
             System.out.println(requete);
             int rs = st.executeUpdate(requete);
@@ -148,7 +152,54 @@ public class Client {
             e.printStackTrace();
         }
     }
+public Object[][] getClients(){
+        Connection conn;
+        JDBConnector jdbc = new JDBConnector();
+        conn = jdbc.CreateConnection();
+        ArrayList<Film> films= new ArrayList<Film>();
+        int nb=0;
+        try {
+            PreparedStatement st = conn.prepareStatement("SELECT count(*) from clients");
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                nb= rs.getInt(1);
+            }
 
+        } catch (SQLException e) {
+            System.out.println("Error Occured " + e.toString());
+        }
+        Object donnee[][]=new Object[nb][5];
+         try {
+            String requete = "SELECT * from Client";
+            System.out.println(requete);
+            Statement st = conn.createStatement();
+            ResultSet rs=st.executeQuery(requete);
+            int i=0;
+            while (rs.next()){
+               
+                String ID=rs.getString("NumeroClient");
+                String nom=rs.getString("Nom");
+                String prenom=rs.getString("Prenom");
+                String Age=rs.getString("Age");
+                String Adresse=rs.getString("Adresse");
+                String Mail=rs.getString("Mail");
+                System.out.println(ID+nom+Mail+ID);
+                donnee[i][0]=numeroclient;
+                donnee[i][1]=nom;
+                donnee[i][2]=prenom;
+                donnee[i][3]=Age;
+                donnee[i][4]=Adresse;
+                donnee[i][5]=Mail;
+                System.out.print(Arrays.deepToString(donnee));
+                i++;
+                
+                
+                
+            } }catch (SQLException e){
+                    e.printStackTrace();
+                    }
+            return donnee; 
+    }
     /*public String VoirBillets(int numeroclient) {
         Connection conn;
         JDBConnector jdbc = new JDBConnector();

@@ -4,28 +4,32 @@
  */
 package Vue;
 
-import java.awt.event.*;
-import java.awt.*;
-import java.util.*;
-import javax.swing.*;
-import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import Cinema.*;
+import Cinema.Client;
+import Cinema.Film;
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Naiss
+ * @author XPS
  */
-public class PageAccueilClient extends JFrame implements ActionListener, ItemListener {
-
-    private final JButton MonCompte;
+public class Dossier_Client extends JFrame implements ActionListener, ItemListener {
+     private final JButton MonCompte;
 
     private final JPanel p0;
     
 
-    public PageAccueilClient() {
+    public Dossier_Client() {
         super("Page d'accueil");
         setLayout(new BorderLayout());
         setBounds(0, 0, 400, 400);
@@ -33,14 +37,14 @@ public class PageAccueilClient extends JFrame implements ActionListener, ItemLis
         setVisible(true);
 
         MonCompte = new JButton("Mon Compte");
-        Film film = new Film();
+        Client client = new Client();
 
         p0 = new JPanel();
         p0.add(MonCompte);
         p0.setLayout(new GridLayout(1, 3));
-        String columns[] = {"Affiche", "Nom", "Realisateur", "Duree", "Synopsis", "Date de parution", "Note de presse", "Note de spectateurs", "Matricule employé", "IDFILM"};
+        String columns[] = {"NumeroClient", "Nom", "Prenom", "Age", "Adresse", "Mail"};
         DefaultTableModel snoopy;
-        snoopy = new DefaultTableModel(film.getfilms(), columns);
+        snoopy = new DefaultTableModel(client.getClients(), columns);
 
         JTable table = new JTable(snoopy);
 
@@ -64,5 +68,4 @@ public class PageAccueilClient extends JFrame implements ActionListener, ItemLis
     public void itemStateChanged(ItemEvent e) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-
 }

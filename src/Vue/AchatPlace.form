@@ -304,11 +304,11 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Veuillez entrez le nom du film"/>
+        <Property name="text" type="java.lang.String" value="Num&#xe9;ro de la s&#xe9;ance"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="250" y="80" width="-1" height="-1"/>
+          <AbsoluteConstraints x="210" y="60" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -328,7 +328,7 @@
     <Component class="javax.swing.JTextField" name="jTextField1">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="530" y="80" width="190" height="-1"/>
+          <AbsoluteConstraints x="410" y="60" width="50" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -347,15 +347,10 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel1">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Vue/z8cin&#xe9;4.png"/>
-        </Property>
-      </Properties>
+    <Component class="javax.swing.JLabel" name="jLabel13">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="0" width="-1" height="-1"/>
+          <AbsoluteConstraints x="480" y="60" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
