@@ -4,12 +4,12 @@
  */
 package Vue;
 
-import Cinema.Seance;
+import Cinema.*;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.sql.Statement;
-import projetjava.utils.JDBConnector;
+import DAO.JDBConnector;
 
 /**
  *
@@ -49,9 +49,10 @@ public class AjouteSeance extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Bienvenue à vous !");
         setMaximumSize(new java.awt.Dimension(960, 536));
         setMinimumSize(new java.awt.Dimension(960, 536));
         setPreferredSize(new java.awt.Dimension(961, 536));
@@ -110,7 +111,7 @@ public class AjouteSeance extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 260, -1, -1));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/retour2.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z21retour2.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -151,8 +152,8 @@ public class AjouteSeance extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 190, 130, -1));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/ESAIEE.png"))); // NOI18N
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z36ESAIEE.png"))); // NOI18N
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -176,7 +177,8 @@ public class AjouteSeance extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       ProgrammerSeance(jTextField1.getText(),jTextField2.getText(), jTextField3.getText(),jTextField4.getText(),jTextField5.getText(),jTextField7.getText(),jTextField8.getText());
+        Employe employe = new Employe();
+        employe.ProgrammerSeance(jTextField1.getText(),jTextField2.getText(), jTextField3.getText(),jTextField4.getText(),jTextField5.getText(),jTextField7.getText(),jTextField8.getText());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
@@ -199,39 +201,7 @@ public class AjouteSeance extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField8ActionPerformed
     
-    public void ProgrammerSeance(String NumeroSeance, String date, String heure,String DureeSeance,String numerosalle, String idfilm, String matriculeemploye) {
-        Connection conn;
-        JDBConnector jdbc = new JDBConnector();
-        conn = jdbc.CreateConnection();
-        try {
-            String requete = "INSERT INTO seance (`NumeroSeance`,`Date`,`Heure`,`DureeSeance`,`NumeroSalle`) VALUES ('"+NumeroSeance+"','"+date+"','"+heure+"','"+DureeSeance+"','"+numerosalle+"')";
-            System.out.println(requete);
-            Statement st = conn.createStatement();
-            int rs = st.executeUpdate(requete);
-
-            if (rs > 0) {
-                System.out.println("Le nombre de réduction ajouté à la base de donnée est de : " + rs);
-            }
-            if (rs == 0) {
-                System.out.println("Votre requete n'a apporté aucune modification.");
-            }
-            requete = "INSERT INTO projeter (`NumeroSeance`,`IDFILM`,`matriculeemploye`) VALUES ('" + NumeroSeance + "','" + idfilm + "','" + matriculeemploye + "')";
-            st = conn.createStatement();
-            rs = st.executeUpdate(requete);
-
-            if (rs > 0) {
-                System.out.println("Le nombre de réduction ajouté à la base de donnée est de : " + rs);
-            }
-            if (rs == 0) {
-                System.out.println("Votre requete n'a apporté aucune modification.");
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-       
-
-    }
+   
     /**
      * @param args the command line arguments
      */
@@ -275,7 +245,7 @@ public class AjouteSeance extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextField1;

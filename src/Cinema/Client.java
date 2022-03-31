@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.*;
 import javax.swing.ImageIcon;
-import projetjava.utils.JDBConnector;
+import DAO.JDBConnector;
 
 /**
  *
@@ -195,7 +195,7 @@ public class Client {
         } catch (SQLException e) {
             System.out.println("Error Occured " + e.toString());
         }
-        Object donnee[][]=new Object[nb][11];
+        Object donnee[][]=new Object[nb][5];
          try {
             String requete = "SELECT * from Client";
             System.out.println(requete);
@@ -211,16 +211,12 @@ public class Client {
                 String Adresse=rs.getString("Adresse");
                 String Mail=rs.getString("Mail");
                 System.out.println(ID+nom+Mail+ID);
-                donnee[i][0]=new ImageIcon(""+url+"");
+                donnee[i][0]=numeroclient;
                 donnee[i][1]=nom;
-                donnee[i][2]=realisateur;
-                donnee[i][3]=Duree;
-                donnee[i][4]=Synopsis;
-                donnee[i][5]=DateDeParution;
-                donnee[i][6]=NoteDePresse;
-                donnee[i][7]=NoteDeSpec;
-                donnee[i][8]=MatriculeEmploye;
-                donnee[i][9]=ID;
+                donnee[i][2]=prenom;
+                donnee[i][3]=Age;
+                donnee[i][4]=Adresse;
+                donnee[i][5]=Mail;
                 System.out.print(Arrays.deepToString(donnee));
                 i++;
                 
@@ -229,7 +225,7 @@ public class Client {
             } }catch (SQLException e){
                     e.printStackTrace();
                     }
-            
+            return donnee; 
     }
      
 

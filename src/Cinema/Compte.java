@@ -6,7 +6,7 @@ package Cinema;
 
 import static java.awt.image.ImageObserver.WIDTH;
 import java.sql.*;
-import projetjava.utils.JDBConnector;
+import DAO.JDBConnector;
 
 /**
  *

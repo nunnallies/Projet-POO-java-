@@ -10,7 +10,7 @@ import java.awt.Color;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
-import projetjava.utils.JDBConnector;
+import DAO.JDBConnector;
 
 /**
  *
@@ -44,13 +44,12 @@ public class reduction extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jCheckBox4 = new javax.swing.JCheckBox();
         jCheckBox1 = new javax.swing.JCheckBox();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Bienvune à vous !");
@@ -114,23 +113,13 @@ public class reduction extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 390, -1, -1));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/ticket3.png"))); // NOI18N
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, -1, -1));
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
-
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/retour2.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z21retour2.png"))); // NOI18N
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 50));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/spotG.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -90, 510, -1));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/spotD.png"))); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, -90, 600, -1));
 
         jCheckBox4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jCheckBox4.setText("-40%");
@@ -150,6 +139,15 @@ public class reduction extends javax.swing.JFrame {
         });
         getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, -1, -1));
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z30ticket3.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 0, -1, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z27spotG.png"))); // NOI18N
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -70, -1, 570));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z26spotD.png"))); // NOI18N
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, -60, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -168,12 +166,15 @@ public class reduction extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        
-        if (jCheckBox7.isSelected()) {Reduction(20);}
-        if (jCheckBox8.isSelected()) {Reduction(30);}
-        if (jCheckBox9.isSelected()) {Reduction(50);}
-        if (jCheckBox10.isSelected()) {Reduction(60);}
-        if (jCheckBox1.isSelected()) {Reduction(10);}
-        if (jCheckBox4.isSelected()) {Reduction(40);}
+        Employe employe = new Employe();
+        
+        
+        if (jCheckBox7.isSelected()) {employe.Reduction(20);}
+        if (jCheckBox8.isSelected()) {employe.Reduction(30);}
+        if (jCheckBox9.isSelected()) {employe.Reduction(50);}
+        if (jCheckBox10.isSelected()) {employe.Reduction(60);}
+        if (jCheckBox1.isSelected()) {employe.Reduction(10);}
+        if (jCheckBox4.isSelected()) {employe.Reduction(40);}
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -194,27 +195,6 @@ public class reduction extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox1ActionPerformed
     
-    public void Reduction(int pourcentage) {
-
-        Connection conn;
-        JDBConnector jdbc = new JDBConnector();
-        conn = jdbc.CreateConnection();
-        try {
-            String requete = "INSERT INTO reduction (`Pourcentage`) VALUES ('" + pourcentage + "')";
-            Statement st = conn.createStatement();
-            int rs = st.executeUpdate(requete);
-
-            if (rs > 0) {
-                System.out.println("Le nombre de réduction ajouté à la base de donnée est de : " + rs);
-            }
-            if (rs == 0) {
-                System.out.println("Votre requete n'a apporté aucune modification.");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-       
-    }
     
     
     /**
@@ -261,11 +241,10 @@ public class reduction extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox7;
     private javax.swing.JCheckBox jCheckBox8;
     private javax.swing.JCheckBox jCheckBox9;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     // End of variables declaration//GEN-END:variables
 }

@@ -8,7 +8,7 @@ import static java.awt.image.ImageObserver.WIDTH;
 import java.sql.*;
 import java.util.*;
 import javax.swing.ImageIcon;
-import projetjava.utils.JDBConnector;
+import DAO.JDBConnector;
 import Vue.*;
 
 /**

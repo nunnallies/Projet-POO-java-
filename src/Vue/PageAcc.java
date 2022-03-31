@@ -3,13 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vue;
+import Cinema.*;
 
-import projetjava.utils.*;
 
 import java.sql.Connection;
 import javax.swing.JFrame;
 import static javax.swing.text.html.HTML.Tag.SELECT;
-import projetjava.utils.*;
 import java.sql.*;
 
 /**
@@ -23,6 +22,7 @@ public class PageAcc extends javax.swing.JFrame {
      */
     public PageAcc() {
         initComponents();
+        employe = new Employe();
     }
 
     void fermer() {
@@ -30,30 +30,7 @@ public class PageAcc extends javax.swing.JFrame {
 
     }
 
-    public boolean VerifierExistenceEmploye(String pseudonyme, String mdp) {
-        Connection conn;
-        JDBConnector jdbc = new JDBConnector();
-        conn = jdbc.CreateConnection();
-        int a=-1;
-        try {
-            PreparedStatement st = conn.prepareStatement("SELECT count(*) from employe WHERE login='" + pseudonyme + "' AND motdepasse='" + mdp + "'");
-            ResultSet rs = st.executeQuery();
-            while (rs.next()){
-                 a=rs.getInt(WIDTH);
-            }
-
-            
-        } catch (SQLException e) {
-            System.out.println("Error Occured " + e.toString());
-        }
-        System.out.println("Le nombre d'element répondant aux criteres est de :" + a);
-        if (a==0){
-            return false; 
-        } 
-        else{
-            return true;
-        }
-    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -70,11 +47,10 @@ public class PageAcc extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         PasswordField = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Bienvenue à vous !");
@@ -126,31 +102,28 @@ public class PageAcc extends javax.swing.JFrame {
         });
         getContentPane().add(PasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 270, 140, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/ciné.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z5ciné.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 60, 240, 400));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/TESSSSSSSSSSTE.png"))); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, 210));
-
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/eseeee.png"))); // NOI18N
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 200, -1, -1));
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setText("BIENVENUE");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, -1, -1));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/CLAPET.png"))); // NOI18N
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, -1, 210));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z3TESSSSSSSSSSTE.png"))); // NOI18N
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 660, -1));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z2CLAPET.png"))); // NOI18N
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        
-
-        if (VerifierExistenceEmploye(LoginField.getText(), PasswordField.getText())) {
+        if (employe.VerifierExistenceEmploye(LoginField.getText(), PasswordField.getText())) {
             new AppercuEmplyé().setVisible(true);
             fermer();
         } 
@@ -185,12 +158,14 @@ public class PageAcc extends javax.swing.JFrame {
     private javax.swing.JTextField PasswordField;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
+    private Employe employe;
+
 }
+

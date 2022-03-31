@@ -35,16 +35,17 @@ public class AppercuEmplyé extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Bienvenue à vous !");
         setMaximumSize(new java.awt.Dimension(960, 536));
         setMinimumSize(new java.awt.Dimension(960, 536));
         setPreferredSize(new java.awt.Dimension(960, 536));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/dossierclient.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z11dossierclient.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -52,7 +53,7 @@ public class AppercuEmplyé extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 207, 156, 260));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/reduc.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z19reduc.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -60,7 +61,7 @@ public class AppercuEmplyé extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 207, 156, 260));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/filmpopu.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z15filmpopu (2).png"))); // NOI18N
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -68,7 +69,7 @@ public class AppercuEmplyé extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 207, 156, 260));
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/update.png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z32update.png"))); // NOI18N
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -97,16 +98,16 @@ public class AppercuEmplyé extends javax.swing.JFrame {
         jLabel5.setText("MENU EMPLOYE");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, -1, 27));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/ticket3.png"))); // NOI18N
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, -1, 150));
-
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/retour2.png"))); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z21retour2.png"))); // NOI18N
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 100, 50));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z30ticket3.png"))); // NOI18N
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -181,6 +182,6 @@ public class AppercuEmplyé extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     // End of variables declaration//GEN-END:variables
 }

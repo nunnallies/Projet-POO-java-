@@ -3,11 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Vue;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  *
  * @author Naiss
  */
 public class test2 {
+    
+    
+        
     
 }
