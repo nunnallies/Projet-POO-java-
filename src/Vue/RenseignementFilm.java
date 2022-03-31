@@ -52,7 +52,6 @@ public class RenseignementFilm extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jTextField10 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -60,7 +59,6 @@ public class RenseignementFilm extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        textField1 = new java.awt.TextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Bienvenue à vous !");
@@ -146,10 +144,6 @@ public class RenseignementFilm extends javax.swing.JFrame {
         jLabel8.setText("Duree ");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, 82, -1));
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel9.setText("Photo");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 250, 187, -1));
-
         jTextField10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField10ActionPerformed(evt);
@@ -159,7 +153,7 @@ public class RenseignementFilm extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel10.setText("Entrer votre matricule puis valider");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 300, -1, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 290, -1, -1));
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton1.setText("Valider");
@@ -189,14 +183,6 @@ public class RenseignementFilm extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel13.setText("Note De Spectateurs");
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 210, 187, -1));
-
-        textField1.setText("textField1");
-        textField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textField1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(textField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 250, 140, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -237,7 +223,7 @@ public class RenseignementFilm extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         Employe employe = new Employe();
-        employe.AjouterUnFilm(jTextField1.getText(),jTextField2.getText(),jTextField5.getText(),jTextField3.getText(),jTextField10.getText(),jTextField7.getText(),jTextField9.getText(),jTextField4.getText(),textField1.getText());
+        employe.AjouterUnFilm(jTextField1.getText(),jTextField2.getText(),jTextField5.getText(),jTextField3.getText(),jTextField10.getText(),jTextField7.getText(),jTextField9.getText(),jTextField4.getText());
 
         
         
@@ -246,10 +232,6 @@ public class RenseignementFilm extends javax.swing.JFrame {
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
-
-    private void textField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textField1ActionPerformed
 
 
     /**
@@ -282,7 +264,7 @@ public class RenseignementFilm extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RenseignementFilm().setVisible(true);
+               
             }
         });
     }
@@ -301,7 +283,6 @@ public class RenseignementFilm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField2;
@@ -310,6 +291,5 @@ public class RenseignementFilm extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField9;
-    private java.awt.TextField textField1;
     // End of variables declaration//GEN-END:variables
 }

@@ -9,7 +9,11 @@ import java.sql.*;
 import java.util.*;
 import javax.swing.ImageIcon;
 import DAO.JDBConnector;
+
+import vue.*;
+
 import Vue.*;
+
 
 /**
  *
@@ -76,8 +80,12 @@ public class Film {
                 String Duree=rs.getString("Duree");
                 String url=rs.getString("path");
                 System.out.println(DateDeParution+Synopsis+MatriculeEmploye+ID);
+
+                donnee[i][0]=new ImageIcon(url);
+
                 ImageIcon image = new ImageIcon(url);
                 donnee[i][0]=image;
+
                 donnee[i][1]=nom;
                 donnee[i][2]=realisateur;
                 donnee[i][3]=Duree;
