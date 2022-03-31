@@ -9,6 +9,7 @@ package Cinema;
  * @author Naiss
  */
 public class Billet {
+    String NumeroBillet,Categorie,Prix,
     
     
 }
