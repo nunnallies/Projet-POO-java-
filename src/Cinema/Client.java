@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.*;
+import javax.swing.ImageIcon;
 import projetjava.utils.JDBConnector;
 
 /**
@@ -177,5 +178,59 @@ public class Client {
         
 
     }*/
+    
+    public Object[][] getClients(){
+        Connection conn;
+        JDBConnector jdbc = new JDBConnector();
+        conn = jdbc.CreateConnection();
+        ArrayList<Film> films= new ArrayList<Film>();
+        int nb=0;
+        try {
+            PreparedStatement st = conn.prepareStatement("SELECT count(*) from clients");
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                nb= rs.getInt(1);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error Occured " + e.toString());
+        }
+        Object donnee[][]=new Object[nb][11];
+         try {
+            String requete = "SELECT * from Client";
+            System.out.println(requete);
+            Statement st = conn.createStatement();
+            ResultSet rs=st.executeQuery(requete);
+            int i=0;
+            while (rs.next()){
+               
+                String ID=rs.getString("NumeroClient");
+                String nom=rs.getString("Nom");
+                String prenom=rs.getString("Prenom");
+                String Age=rs.getString("Age");
+                String Adresse=rs.getString("Adresse");
+                String Mail=rs.getString("Mail");
+                System.out.println(ID+nom+Mail+ID);
+                donnee[i][0]=new ImageIcon(""+url+"");
+                donnee[i][1]=nom;
+                donnee[i][2]=realisateur;
+                donnee[i][3]=Duree;
+                donnee[i][4]=Synopsis;
+                donnee[i][5]=DateDeParution;
+                donnee[i][6]=NoteDePresse;
+                donnee[i][7]=NoteDeSpec;
+                donnee[i][8]=MatriculeEmploye;
+                donnee[i][9]=ID;
+                System.out.print(Arrays.deepToString(donnee));
+                i++;
+                
+                
+                
+            } }catch (SQLException e){
+                    e.printStackTrace();
+                    }
+            
+    }
+     
 
 }
