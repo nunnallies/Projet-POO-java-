@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 import Cinema.*;
 import javax.swing.table.DefaultTableModel;
 
-/**
+/** u
  *
  * @author Naiss
  */
@@ -23,7 +23,10 @@ public class PageAccueilClient extends JFrame implements ActionListener, ItemLis
     private final JButton MonCompte;
 
     private final JPanel p0;
-    
+
+    public Class getcolumns(int column) {
+        return (column == 1) ? Icon.class : Object.class;
+    }
 
     public PageAccueilClient() {
         super("Page d'accueil");
@@ -40,6 +43,7 @@ public class PageAccueilClient extends JFrame implements ActionListener, ItemLis
         p0.setLayout(new GridLayout(1, 3));
         String columns[] = {"Affiche", "Nom", "Realisateur", "Duree", "Synopsis", "Date de parution", "Note de presse", "Note de spectateurs", "Matricule employé", "IDFILM"};
         DefaultTableModel snoopy;
+
         snoopy = new DefaultTableModel(film.getfilms(), columns);
 
         JTable table = new JTable(snoopy);

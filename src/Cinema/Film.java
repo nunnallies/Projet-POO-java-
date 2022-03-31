@@ -9,7 +9,11 @@ import java.sql.*;
 import java.util.*;
 import javax.swing.ImageIcon;
 import DAO.JDBConnector;
+
 import vue.*;
+
+import Vue.*;
+
 
 /**
  *
@@ -76,7 +80,12 @@ public class Film {
                 String Duree=rs.getString("Duree");
                 String url=rs.getString("path");
                 System.out.println(DateDeParution+Synopsis+MatriculeEmploye+ID);
+
                 donnee[i][0]=new ImageIcon(url);
+
+                ImageIcon image = new ImageIcon(url);
+                donnee[i][0]=image;
+
                 donnee[i][1]=nom;
                 donnee[i][2]=realisateur;
                 donnee[i][3]=Duree;
@@ -95,9 +104,33 @@ public class Film {
             
 
         } catch (SQLException e){
+             System.out.println("Error Occured " + e.toString());
             
         }
         System.out.println(Arrays.deepToString(donnee));
         return donnee;
+    }
+    
+    public String GetID(String nom){
+        Connection conn;
+        JDBConnector jdbc = new JDBConnector();
+        conn = jdbc.CreateConnection();
+        String ID="";
+        try{
+            String requete = "SELECT IDFILM from film WHERE nom='"+nom+"'";
+            System.out.println(requete);
+            Statement st = conn.createStatement();
+            ResultSet rs=st.executeQuery(requete);
+            while (rs.next()){
+                ID=rs.getString("IDFILM");
+            }
+            
+        } catch (SQLException e) {
+             System.out.println("Error Occured " + e.toString());
+            
+        }
+        
+        return ID; 
+        
     }
 }
