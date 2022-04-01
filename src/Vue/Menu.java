@@ -80,7 +80,6 @@ public class Menu extends javax.swing.JFrame {
 
 
          new PageAccueilClient().setVisible(true);
-        //new ChoixCompte_PasCompte().setVisible(true);
 
 
         fermer();

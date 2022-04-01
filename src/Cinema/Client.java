@@ -23,18 +23,17 @@ public class Client {
     String nom, prenom, adresse, mail;
     int numeroclient, age;
 
-    Client(int numeroclient, String nom, String prenom, int age, String adresse, String mail) {
+    public Client Client(int numeroclient, String nom, String prenom, int age, String adresse, String mail) {
         this.adresse = adresse;
         this.age = age;
         this.mail = mail;
         this.prenom = prenom;
         this.nom = nom;
         this.numeroclient = numeroclient;
+        return this;
     }
 
-    public Client() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+   
 
     public boolean VerifierExistenceCompte(String pseudonyme, String mdp) {
         Connection conn;
@@ -87,7 +86,7 @@ public class Client {
         JDBConnector jdbc = new JDBConnector();
         conn = jdbc.CreateConnection();
         try {
-            String requete = "INSERT INTO film (`Categorie`,`numeroseance`,`numeroclient`,`rangee`,`alle`) VALUES ('" + Categorie + "','" + numeroseance + "','" + numeroclient + "','" + rangee + "','" + allee + "')";
+            String requete = "INSERT INTO billet (`Categorie`,`numeroseance`,`numeroclient`,`rangee`,`alle`) VALUES ('" + Categorie + "','" + numeroseance + "','" + numeroclient + "','" + rangee + "','" + allee + "')";
             Statement st = conn.createStatement();
             System.out.println(requete);
             int rs = st.executeUpdate(requete);
@@ -109,7 +108,7 @@ public class Client {
         JDBConnector jdbc = new JDBConnector();
         conn = jdbc.CreateConnection();
         try {
-            String requete = "INSERT INTO film (`prix`, `lieu`, `Date`, `IDREDUCTION`,`numeroclient`,`numerobillet`) VALUES ('" + prix + "','" + lieu + "','" + Date + "','" + IDreduction + "','" + numeroclient + "','" + numerobillet + "')";
+            String requete = "INSERT INTO facture (`prix`, `lieu`, `Date`, `IDREDUCTION`,`numeroclient`,`numerobillet`) VALUES ('" + prix + "','" + lieu + "','" + Date + "','" + IDreduction + "','" + numeroclient + "','" + numerobillet + "')";
             Statement st = conn.createStatement();
             System.out.println(requete);
             int rs = st.executeUpdate(requete);
@@ -160,7 +159,7 @@ public Object[][] getClients(){
         ArrayList<Film> films= new ArrayList<Film>();
         int nb=0;
         try {
-            PreparedStatement st = conn.prepareStatement("SELECT count(*) from clients");
+            PreparedStatement st = conn.prepareStatement("SELECT count(*) from client");
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
                 nb= rs.getInt(1);
@@ -169,9 +168,9 @@ public Object[][] getClients(){
         } catch (SQLException e) {
             System.out.println("Error Occured " + e.toString());
         }
-        Object donnee[][]=new Object[nb][5];
+        Object donnee[][]=new Object[nb][6];
          try {
-            String requete = "SELECT * from Client";
+            String requete = "SELECT * from client";
             System.out.println(requete);
             Statement st = conn.createStatement();
             ResultSet rs=st.executeQuery(requete);
@@ -185,7 +184,7 @@ public Object[][] getClients(){
                 String Adresse=rs.getString("Adresse");
                 String Mail=rs.getString("Mail");
                 System.out.println(ID+nom+Mail+ID);
-                donnee[i][0]=numeroclient;
+                donnee[i][0]=ID;
                 donnee[i][1]=nom;
                 donnee[i][2]=prenom;
                 donnee[i][3]=Age;
@@ -237,7 +236,7 @@ public Object[][] getClients(){
         ArrayList<Film> films= new ArrayList<Film>();
         int nb=0;
         try {
-            PreparedStatement st = conn.prepareStatement("SELECT count(*) from clients");
+            PreparedStatement st = conn.prepareStatement("SELECT count(*) from client");
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
                 nb= rs.getInt(1);

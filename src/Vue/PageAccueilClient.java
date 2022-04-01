@@ -38,6 +38,7 @@ public class PageAccueilClient extends JFrame implements ActionListener, ItemLis
         MonCompte = new JButton("Mon Compte");
         Film film = new Film();
         Billet billet = new Billet();
+        Client client=new Client();
 
         p0 = new JPanel();
         p0.add(MonCompte);
@@ -48,7 +49,7 @@ public class PageAccueilClient extends JFrame implements ActionListener, ItemLis
         DefaultTableModel snoopy;
    
 
-        snoopy = new DefaultTableModel(billet.getClientBillets(4), columns);
+        snoopy = new DefaultTableModel(client.getClients(), columns);
 
         JTable table = new JTable(snoopy);
 
