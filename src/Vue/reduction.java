@@ -5,7 +5,7 @@
 package Vue;
 
 
-import Cinema.*;
+import Modele.Employe;
 import java.awt.Color;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -160,7 +160,7 @@ public class reduction extends javax.swing.JFrame {
     }//GEN-LAST:event_jCheckBox10ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-         new AppercuEmplyé().setVisible(true);
+         new AppercuEmploye().setVisible(true);
         fermer();
     }//GEN-LAST:event_jButton3ActionPerformed
 

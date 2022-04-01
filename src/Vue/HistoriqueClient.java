@@ -5,7 +5,6 @@
 package Vue;
 
 import Modele.Client;
-import Modele.Film;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -23,16 +22,16 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author XPS
  */
-public class Dossier_Client extends JFrame implements ActionListener, ItemListener {
+public class HistoriqueClient extends JFrame implements ActionListener, ItemListener {
      private final JButton MonCompte;
 
     private final JPanel p0;
     
 
-    public Dossier_Client() {
+    public HistoriqueClient() {
         super("Page d'accueil");
         setLayout(new BorderLayout());
-        setBounds(0, 0, 700, 400);
+        setBounds(0, 0, 400, 400);
         setResizable(true);
         setVisible(true);
 
@@ -42,9 +41,10 @@ public class Dossier_Client extends JFrame implements ActionListener, ItemListen
         p0 = new JPanel();
         p0.add(MonCompte);
         p0.setLayout(new GridLayout(1, 3));
-        String columns[] = {"NumeroClient", "Nom", "Prenom", "Age", "Adresse", "Mail"};
+        String columns[] = {"NumeroBillet", "Categorie", "NumeroSeance", "Rangee", "allee"};
         DefaultTableModel snoopy;
-        snoopy = new DefaultTableModel(client.getClients(), columns);
+        
+        snoopy = new DefaultTableModel(client.getClientBillets(1), columns);
 
         JTable table = new JTable(snoopy);
 
@@ -52,7 +52,11 @@ public class Dossier_Client extends JFrame implements ActionListener, ItemListen
         getContentPane().add(scrollPane);
         table.setShowGrid(false);
         table.setShowVerticalLines(false);
-                    
+        //p0.add(scrollPane);
+        //p0.add(table);
+        //add("p0",p0);
+
+        //Définir la hauteur des lignes dans            
     }
 
     @Override

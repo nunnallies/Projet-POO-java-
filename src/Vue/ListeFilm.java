@@ -4,32 +4,32 @@
  */
 package Vue;
 
-import Modele.Client;
+import Modele.Billet;
 import Modele.Film;
-import java.awt.BorderLayout;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
+import java.awt.event.*;
+import java.awt.*;
+import java.util.*;
+import javax.swing.*;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 
-/**
+/** u
  *
- * @author XPS
+ * @author Naiss
  */
-public class Dossier_Client extends JFrame implements ActionListener, ItemListener {
-     private final JButton MonCompte;
+public class ListeFilm extends JFrame implements ActionListener, ItemListener {
+
+    private final JButton MonCompte;
 
     private final JPanel p0;
-    
 
-    public Dossier_Client() {
+    public Class getcolumns(int column) {
+        return (column == 1) ? Icon.class : Object.class;
+    }
+
+    public ListeFilm() {
         super("Page d'accueil");
         setLayout(new BorderLayout());
         setBounds(0, 0, 700, 400);
@@ -37,13 +37,19 @@ public class Dossier_Client extends JFrame implements ActionListener, ItemListen
         setVisible(true);
 
         MonCompte = new JButton("Mon Compte");
-        Client client = new Client();
+        Film film = new Film();
+        Billet billet = new Billet();
+        Client client=new Client();
 
         p0 = new JPanel();
         p0.add(MonCompte);
         p0.setLayout(new GridLayout(1, 3));
-        String columns[] = {"NumeroClient", "Nom", "Prenom", "Age", "Adresse", "Mail"};
+        //String columns[] = {"Affiche", "Nom", "Realisateur", "Duree", "Synopsis", "Date de parution", "Note de presse", "Note de spectateurs", "Matricule employé", "IDFILM"};
+        
+        String columns[]={"NumeroBillet","NumeroSeance","Film","Catégorie","Rangee","Allee"};
         DefaultTableModel snoopy;
+   
+
         snoopy = new DefaultTableModel(client.getClients(), columns);
 
         JTable table = new JTable(snoopy);
@@ -52,7 +58,7 @@ public class Dossier_Client extends JFrame implements ActionListener, ItemListen
         getContentPane().add(scrollPane);
         table.setShowGrid(false);
         table.setShowVerticalLines(false);
-                    
+                
     }
 
     @Override
@@ -64,4 +70,5 @@ public class Dossier_Client extends JFrame implements ActionListener, ItemListen
     public void itemStateChanged(ItemEvent e) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
 }

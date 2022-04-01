@@ -4,31 +4,22 @@
  */
 package Vue;
 
-import Modele.Client;
-
-
 /**
  *
- * @author 
+ * @author XPS
  */
-public class AchatPlace extends javax.swing.JFrame {
-
-    public char A;
-    public char B;
-    public char C;
-    public char D;
-    public char E;
-    public char F;
+public class AchatPlace2 extends javax.swing.JFrame {
 
     /**
-     * Creates new form AchatPlace
+     * Creates new form AchatPlace2
      */
-    public AchatPlace() {
+    public AchatPlace2() {
         initComponents();
     }
     void fermer(){
         dispose();
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -64,15 +55,10 @@ public class AchatPlace extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jButton7 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Bienvenue à vous !");
-        setMaximumSize(new java.awt.Dimension(960, 546));
-        setMinimumSize(new java.awt.Dimension(960, 546));
-        setPreferredSize(new java.awt.Dimension(960, 546));
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z22siege5555.png"))); // NOI18N
@@ -92,83 +78,33 @@ public class AchatPlace extends javax.swing.JFrame {
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(317, 229, 52, -1));
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z22siege5555.png"))); // NOI18N
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 320, 54, -1));
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z22siege5555.png"))); // NOI18N
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(387, 229, 52, -1));
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z22siege5555.png"))); // NOI18N
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(317, 320, 52, -1));
 
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z22siege5555.png"))); // NOI18N
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(387, 320, 52, -1));
 
         jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z22siege5555.png"))); // NOI18N
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
-            }
-        });
         getContentPane().add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 229, 54, -1));
 
         jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z22siege5555.png"))); // NOI18N
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
-            }
-        });
         getContentPane().add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(682, 229, 54, -1));
 
         jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z22siege5555.png"))); // NOI18N
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
-            }
-        });
         getContentPane().add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(538, 229, 54, -1));
 
         jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z22siege5555.png"))); // NOI18N
-        jButton15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton15ActionPerformed(evt);
-            }
-        });
         getContentPane().add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(538, 320, 54, -1));
 
         jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z22siege5555.png"))); // NOI18N
-        jButton16.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton16ActionPerformed(evt);
-            }
-        });
         getContentPane().add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 320, 54, -1));
 
         jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z22siege5555.png"))); // NOI18N
-        jButton17.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton17ActionPerformed(evt);
-            }
-        });
         getContentPane().add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(682, 320, 54, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -219,19 +155,19 @@ public class AchatPlace extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Numéro de la séance");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, -1, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Maintenant, veuillez choisir une place :");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, -1, -1));
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 125, 80, -1));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 100, 50, -1));
 
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z21retour2.png"))); // NOI18N
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -240,19 +176,12 @@ public class AchatPlace extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 50));
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 60, -1, -1));
 
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("Si vous etes majeur tapez A, si vous etes mineur tapez B");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, -1, -1));
-
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 70, 80, -1));
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Si vous etes majeur tapez A, si vous etes mineur tapez B");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, -1, -1));
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 60, -1, -1));
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z8ciné4.png"))); // NOI18N
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -261,87 +190,17 @@ public class AchatPlace extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       
-        Client client = new Client();
-        client.AcheterUnBillet(jTextField2.getText(),jTextField1.getText(),1,B,1);
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        new AppercuClient().setVisible(true);
+        new AppercuClientPASmembre().setVisible(true);
         fermer();
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
-        Client client = new Client();
-        client.AcheterUnBillet(jTextField2.getText(),jTextField1.getText(),1,A,1);
-        new AppercuClient().setVisible(true);
-        fermer();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-      
-        Client client = new Client();
-        client.AcheterUnBillet(jTextField2.getText(),jTextField1.getText(),1,A,2);
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-      
-        Client client = new Client();
-        client.AcheterUnBillet(jTextField2.getText(),jTextField1.getText(),1,C,1);
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-     
-        Client client = new Client();
-        client.AcheterUnBillet(jTextField2.getText(),jTextField1.getText(),1,D,1);
-    }//GEN-LAST:event_jButton14ActionPerformed
-
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-      
-        Client client = new Client();
-        client.AcheterUnBillet(jTextField2.getText(),jTextField1.getText(),1,E,1);
-    }//GEN-LAST:event_jButton12ActionPerformed
-
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-      
-        Client client = new Client();
-        client.AcheterUnBillet(jTextField2.getText(),jTextField1.getText(),1,F,1);
-    }//GEN-LAST:event_jButton13ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        
-        Client client = new Client();
-        client.AcheterUnBillet(jTextField2.getText(),jTextField1.getText(),1,B,2);
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
        
-        Client client = new Client();
-        client.AcheterUnBillet(jTextField2.getText(),jTextField1.getText(),1,C,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-     
-        Client client = new Client();
-        client.AcheterUnBillet(jTextField2.getText(),jTextField1.getText(),1,D,2);
-    }//GEN-LAST:event_jButton15ActionPerformed
-
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-      
-        Client client = new Client();
-        client.AcheterUnBillet(jTextField2.getText(),jTextField1.getText(),1,E,2);
-    }//GEN-LAST:event_jButton16ActionPerformed
-
-    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
-     
-        Client client = new Client();
-        client.AcheterUnBillet(jTextField2.getText(),jTextField1.getText(),1,F,2);
-    }//GEN-LAST:event_jButton17ActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
@@ -364,20 +223,20 @@ public class AchatPlace extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AchatPlace.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AchatPlace2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AchatPlace.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AchatPlace2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AchatPlace.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AchatPlace2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AchatPlace.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AchatPlace2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AchatPlace().setVisible(true);
+                new AchatPlace2().setVisible(true);
             }
         });
     }
@@ -400,7 +259,6 @@ public class AchatPlace extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

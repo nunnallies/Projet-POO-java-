@@ -83,12 +83,12 @@ public class FilmPopulaire extends javax.swing.JFrame {
     
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new AppercuEmplyé().setVisible(true);
+        new AppercuEmploye().setVisible(true);
         fermer();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       new PageAccueilClient().setVisible(true);
+       new ListeFilm().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
