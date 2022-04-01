@@ -160,11 +160,10 @@ public class ConnexionEmploye extends javax.swing.JFrame {
  /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-<<<<<<< HEAD:src/Vue/ConnexionEmploye.java
-                new ConnexionEmploye().setVisible(true);
-=======
+            new ConnexionEmploye().setVisible(true);
+
               
->>>>>>> c3b84da1ccdf4fb092cbba74637c0d5d3a06b579:src/Vue/PageAcc.java
+
             }
         });
 

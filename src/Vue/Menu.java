@@ -79,10 +79,7 @@ public class Menu extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
 
-         new PageAccueilClient().setVisible(true);
-        //new ChoixCompte_PasCompte().setVisible(true);
-
-
+        new ChoixCompte_PasCompte().setVisible(true);
         fermer();
       
         
