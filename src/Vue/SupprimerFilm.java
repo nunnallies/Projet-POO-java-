@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vue;
-import Cinema.*;
+import Modele.Employe;
 
 import java.sql.Connection;
 import java.sql.SQLException;

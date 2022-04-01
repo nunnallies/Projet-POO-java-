@@ -40,14 +40,16 @@ public class ChoixCompte_PasCompte extends javax.swing.JFrame {
         setTitle("Bienvenue à vous !");
         setMaximumSize(new java.awt.Dimension(960, 536));
         setMinimumSize(new java.awt.Dimension(960, 536));
-        setPreferredSize(new java.awt.Dimension(960, 536));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Avez-vous un compte ?");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 100, -1, -1));
 
+        jButton4.setBackground(new java.awt.Color(51, 51, 51));
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(204, 204, 204));
         jButton4.setText("OUI");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,7 +58,9 @@ public class ChoixCompte_PasCompte extends javax.swing.JFrame {
         });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 100, 60));
 
+        jButton5.setBackground(new java.awt.Color(51, 51, 51));
         jButton5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(204, 204, 204));
         jButton5.setText("NON");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,7 +69,9 @@ public class ChoixCompte_PasCompte extends javax.swing.JFrame {
         });
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 180, 100, 60));
 
+        jButton6.setBackground(new java.awt.Color(51, 51, 51));
         jButton6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(204, 204, 204));
         jButton6.setText("Créer Un Compte");
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 270, -1, -1));
 
@@ -75,10 +81,10 @@ public class ChoixCompte_PasCompte extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 100, 50));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 50));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z8ciné4.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 530));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

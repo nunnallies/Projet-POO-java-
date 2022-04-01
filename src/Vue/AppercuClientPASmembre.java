@@ -78,17 +78,17 @@ public class AppercuClientPASmembre extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new PageAccueilClient().setVisible(true);
+        new ListeFilm().setVisible(true);
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        new AchatPlace().setVisible(true);
+        new AchatPlace2().setVisible(true);
         fermer();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        new Menu().setVisible(true);
+        new ChoixCompte_PasCompte().setVisible(true);
         fermer();
     }//GEN-LAST:event_jButton4ActionPerformed
 
