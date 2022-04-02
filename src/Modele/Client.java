@@ -8,7 +8,7 @@ import static java.awt.image.ImageObserver.WIDTH;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.SQLException; 
 import java.sql.Statement;
 import java.util.*;
 import javax.swing.ImageIcon;
@@ -24,7 +24,7 @@ public class Client {
     String nom, prenom, adresse, mail;
     int numeroclient, age;
 
-<<<<<<< HEAD:src/Cinema/Client.java
+
     public Client Client(int numeroclient, String nom, String prenom, int age, String adresse, String mail) {
         this.adresse = adresse;
         this.age = age;
@@ -35,10 +35,6 @@ public class Client {
         return this;
     }
 
-   
-=======
-    
->>>>>>> 267142f6c2825afcb226427a64a266795bf1037a:src/Modele/Client.java
 
     public boolean VerifierExistenceCompte(String pseudonyme, String mdp) {
         Connection conn;
@@ -63,15 +59,31 @@ public class Client {
         }
     }
 
-    public Compte CreerUnCompte(int numeroclient, String mail, String pseudonyme, String motdepasse) {
+    public void CreerUnCompte(String nom,String prenom,String age,String Adresse , String mail, String pseudonyme, String motdepasse) {
         Connection conn = null;
         JDBConnector jdbc = new JDBConnector();
         conn = jdbc.CreateConnection();
         try {
-            String requete = "INSERT INTO film (`NumeroClient`, `Mail`, `Pseudonyme`, `MotDePasse`) VALUES ('" + numeroclient + "','" + mail + "','" + pseudonyme + "','" + motdepasse + "')";
-            Statement st = conn.createStatement();
+            String requete="INSERT INTO `client`( `Nom`, `Prenom`, `Age`, `Adresse`, `Mail`) VALUES ('"+nom+"','"+prenom+"','"+age+"','"+Adresse+"','"+mail+"')";
+            Statement st=conn.createStatement();
+            int rs=st.executeUpdate(requete);
+            if (rs>0){
+                System.out.println("Le nombre de client ajouté à la base de donnée est de :"+rs);
+            }
+            if (rs==0){
+                 System.out.println("Votre requete n'a apporté aucune modification.");
+            }
+            requete="SELECT NumeroClient from client WHERE Nom='"+nom+"' AND prenom='"+prenom+"'";
+            st=conn.createStatement();
+            ResultSet rss=st.executeQuery(requete);
+            String numeroclient="";
+            while (rss.next()){
+                numeroclient=rss.getString("NumeroClient");
+            }
+            requete = "INSERT INTO compte (`NumeroClient`, `Mail`, `Pseudonyme`, `MotDePasse`) VALUES ('" + numeroclient + "','" + mail + "','" + pseudonyme + "','" + motdepasse + "')";
+             st = conn.createStatement();
             System.out.println(requete);
-            int rs = st.executeUpdate(requete);
+            rs = st.executeUpdate(requete);
             if (rs > 0) {
                 System.out.println("Le nombre de compte  ajouté à la base de donnée est de : " + rs);
             }
@@ -82,21 +94,16 @@ public class Client {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        Compte compte = new Compte(numeroclient, mail, pseudonyme, motdepasse);
-        return compte;
+       
     }
 
-    public void AcheterUnBillet(String Categorie, String numeroseance, int numeroclient,char rangee, int allee) {
+    public void AcheterUnBillet(String Categorie, String numeroseance, String numeroclient,String rangee, String allee) {
         Connection conn = null;
         JDBConnector jdbc = new JDBConnector();
         conn = jdbc.CreateConnection();
-        char A;
+        
         try {
-<<<<<<< HEAD:src/Cinema/Client.java
-            String requete = "INSERT INTO billet (`Categorie`,`numeroseance`,`numeroclient`,`rangee`,`alle`) VALUES ('" + Categorie + "','" + numeroseance + "','" + numeroclient + "','" + rangee + "','" + allee + "')";
-=======
             String requete = "INSERT INTO billet (`Categorie`,`numeroseance`,`numeroclient`,`rangee`,`allee`) VALUES ('" + Categorie + "','" + numeroseance + "','" + numeroclient + "','" + rangee + "','" + allee + "')";
->>>>>>> 267142f6c2825afcb226427a64a266795bf1037a:src/Modele/Client.java
             Statement st = conn.createStatement();
             System.out.println(requete);
             int rs = st.executeUpdate(requete);
@@ -269,77 +276,4 @@ public class Client {
         System.out.println(Arrays.deepToString(donnee));
         return donnee;
     }
-   public Object[][] getfilms() {
-        Connection conn;
-        JDBConnector jdbc = new JDBConnector();
-        conn = jdbc.CreateConnection();
-        ArrayList<Film> films= new ArrayList<Film>();
-        int nb=0;
-        try {
-<<<<<<< HEAD:src/Cinema/Client.java
-            PreparedStatement st = conn.prepareStatement("SELECT count(*) from client");
-=======
-            PreparedStatement st = conn.prepareStatement("SELECT count(*) from film");
->>>>>>> 267142f6c2825afcb226427a64a266795bf1037a:src/Modele/Client.java
-            ResultSet rs = st.executeQuery();
-            while (rs.next()) {
-                nb= rs.getInt(1);
-            }
-
-        } catch (SQLException e) {
-            System.out.println("Error Occured " + e.toString());
-        }
-        Object donnee[][]=new Object[nb][11];
-        try {
-            String requete = "SELECT * from film";
-            System.out.println(requete);
-            Statement st = conn.createStatement();
-            ResultSet rs=st.executeQuery(requete);
-            int i=0;
-            while (rs.next()){
-               
-                String ID=rs.getString("IDFILM");
-                String nom=rs.getString("Nom");
-                String realisateur=rs.getString("Realisateur");
-                String DateDeParution=rs.getString("DateDeParution");
-                String NoteDePresse=rs.getString("NoteDePresse");
-                String NoteDeSpec=rs.getString("NoteDeSpectateurs");
-                String Synopsis=rs.getString("Synopsis");
-                String MatriculeEmploye=rs.getString("MatriculeEmploye");
-                String Duree=rs.getString("Duree");
-                String url=rs.getString("path");
-                System.out.println(DateDeParution+Synopsis+MatriculeEmploye+ID);
-
-                donnee[i][0]=new ImageIcon(url);
-
-                ImageIcon image = new ImageIcon(url);
-                donnee[i][0]=image;
-
-                donnee[i][1]=nom;
-                donnee[i][2]=realisateur;
-                donnee[i][3]=Duree;
-                donnee[i][4]=Synopsis;
-                donnee[i][5]=DateDeParution;
-                donnee[i][6]=NoteDePresse;
-                donnee[i][7]=NoteDeSpec;
-                donnee[i][8]=MatriculeEmploye;
-                donnee[i][9]=ID;
-                System.out.print(Arrays.deepToString(donnee));
-                i++;
-                
-                
-                
-            }
-            
-
-        } catch (SQLException e){
-             System.out.println("Error Occured " + e.toString());
-            
-        }
-        System.out.println(Arrays.deepToString(donnee));
-        return donnee;
-    }
-    
 }
-    
-    

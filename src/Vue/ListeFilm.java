@@ -4,7 +4,7 @@
  */
 package Vue;
 
-import Modele.Billet;
+import Modele.*;
 import Modele.Film;
 import java.awt.event.*;
 import java.awt.*;

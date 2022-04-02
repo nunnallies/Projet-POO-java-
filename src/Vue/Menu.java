@@ -4,6 +4,7 @@
  */
 package Vue;
 import java.lang.*;
+import Modele.*;
 /**
  *
  * @author XPS
@@ -78,14 +79,12 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
+        Client client=new Client();
+        client.AcheterUnBillet("A","2","4","A","2");
 
-<<<<<<< HEAD
-         new PageAccueilClient().setVisible(true);
 
-
-=======
         new ChoixCompte_PasCompte().setVisible(true);
->>>>>>> 267142f6c2825afcb226427a64a266795bf1037a
+
         fermer();
       
         
