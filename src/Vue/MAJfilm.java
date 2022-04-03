@@ -15,6 +15,8 @@ public class MAJfilm extends javax.swing.JFrame {
     /**
      * Creates new form MAJfilm
      */
+    
+    //permet à l'employer de choisir ce qu'il veut faire par rapport au fillm
     public MAJfilm() {
         initComponents();
     }

@@ -122,7 +122,7 @@ public class ConnexionClient extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_LoginFieldActionPerformed
 
-
+    //verifie que le login et le mdp correspond bien a quelqu'un
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Client client = new Client();
         AppercuClient x = new AppercuClient();

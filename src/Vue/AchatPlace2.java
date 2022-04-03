@@ -276,7 +276,7 @@ public class AchatPlace2 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    //fonction qui permet de selectionner directemetn le siège voulu (elles font toutes la meme chose
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
         if (jTextField2.getText().isEmpty() == false || jTextField1.getText().isEmpty() == false || jTextField3.getText().isEmpty() == false || jTextField4.getText().isEmpty() == false) {

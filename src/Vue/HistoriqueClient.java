@@ -22,12 +22,13 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author XPS
  */
+//nous permet d'afficher l'historique des billets du client
 public class HistoriqueClient extends JFrame implements ActionListener, ItemListener {
 
     private final JButton MonCompte;
 
     private final JPanel p0;
-
+   
     public HistoriqueClient(String x) {
         super("Page d'accueil");
         setLayout(new BorderLayout());

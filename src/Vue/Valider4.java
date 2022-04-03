@@ -60,7 +60,7 @@ public class Valider4 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    //Jframe pour dire a l'utilisateur que ce qu'il a fait a été pris en compte
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         new AppercuClientPASmembre().setVisible(true);
         fermer();

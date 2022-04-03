@@ -120,7 +120,7 @@ public class ConnexionEmploye extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    //verifie que le login et le mdp correspond bien a quelqu'un
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Employe employe = new Employe();
         if (employe.VerifierExistenceEmploye(LoginField.getText(), PasswordField.getText())) {

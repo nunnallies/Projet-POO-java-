@@ -93,7 +93,7 @@ public class SupprimerFilm extends javax.swing.JFrame {
         new MAJfilm().setVisible(true);
         fermer();
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    //en cliquant sur valider le film est supprimer on verifie biensur que c'est correctement rempli
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         if (jTextField1.getText().isEmpty() == false) {
             Employe employe = new Employe();
