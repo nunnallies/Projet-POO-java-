@@ -97,13 +97,36 @@ public class Client {
        
     }
 
-    public void AcheterUnBillet(String Categorie, String numeroseance, String numeroclient,String rangee, String allee) {
+    public void AcheterUnBillet(String Categorie, String numeroseance, int numeroclient,String rangee, String allee) {
         Connection conn = null;
         JDBConnector jdbc = new JDBConnector();
         conn = jdbc.CreateConnection();
         
         try {
             String requete = "INSERT INTO billet (`Categorie`,`numeroseance`,`numeroclient`,`rangee`,`allee`) VALUES ('" + Categorie + "','" + numeroseance + "','" + numeroclient + "','" + rangee + "','" + allee + "')";
+            Statement st = conn.createStatement();
+            System.out.println(requete);
+            int rs = st.executeUpdate(requete);
+            if (rs > 0) {
+                System.out.println("Le nombre de compte  ajouté à la base de donnée est de : " + rs);
+            }
+            if (rs == 0) {
+                System.out.println("Votre requete n'a apporté aucune modification.");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+    
+    public void AcheterUnBillet2(String Categorie, String numeroseance, String Nom, String Prenom,String rangee, String allee) {
+        Connection conn = null;
+        JDBConnector jdbc = new JDBConnector();
+        conn = jdbc.CreateConnection();
+        
+        try {
+            String requete = "INSERT INTO billetnonclient (`Categorie`,`NumeroSeance`,`Nom`,`Prenom`,`rangee`,`allee`) VALUES ('" + Categorie + "','" + numeroseance + "','" + Nom + "','" + Prenom + "','" + rangee + "','" + allee + "')";
             Statement st = conn.createStatement();
             System.out.println(requete);
             int rs = st.executeUpdate(requete);
@@ -245,17 +268,17 @@ public class Client {
             while (rs.next()) {
 
                 String ID = rs.getString("NumeroBillet");
-                String cat = rs.getString("Categorie");
-                String numeroseance = rs.getString("NumeroSeance");
+                String cat = rs.getString("NumeroSeance");
+                String numeroseance = rs.getString("Categorie");
                 String rangee = rs.getString("Rangee");
                 String allee = rs.getString("allee");
-                System.out.println(cat + numeroseance + ID);
+                System.out.println(ID + numeroseance + cat + rangee +allee);
 
                 donnee[i][0] = ID;
                 donnee[i][1] = numeroseance;
-                donnee[i][3] = cat;
-                donnee[i][4] = rangee;
-                donnee[i][5] = allee;
+                donnee[i][2] = cat;
+                donnee[i][3] = rangee;
+                donnee[i][4] = allee;
                 System.out.print(Arrays.deepToString(donnee));
                 i++;
 
@@ -275,5 +298,30 @@ public class Client {
         }
         System.out.println(Arrays.deepToString(donnee));
         return donnee;
+    }
+    
+    public int GetIDClient(String pseudo){
+        Connection conn;
+        JDBConnector jdbc = new JDBConnector();
+        conn = jdbc.CreateConnection();
+        int NumeroClient=0;
+        try{
+            String requete = "SELECT NumeroClient from compte WHERE Pseudonyme='"+pseudo+"'";
+            
+            System.out.println(requete);
+            Statement st = conn.createStatement();
+            ResultSet rs=st.executeQuery(requete);
+            while (rs.next()){
+                NumeroClient=rs.getInt("NumeroClient");
+            }
+            
+        } catch (SQLException e) {
+             System.out.println("Error Occured " + e.toString());
+            
+        }
+        
+        
+        return NumeroClient; 
+        
     }
 }

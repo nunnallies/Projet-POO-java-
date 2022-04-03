@@ -4,14 +4,7 @@
  */
 package Vue;
 
-
 import Modele.Employe;
-import java.sql.*;
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.SQLException;
-import java.sql.Statement;
-import DAO.JDBConnector;
 
 /**
  *
@@ -25,10 +18,12 @@ public class AjouterFilm extends javax.swing.JFrame {
     public AjouterFilm() {
         initComponents();
     }
+
     void fermer() {
         dispose();
 
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -216,23 +211,25 @@ public class AjouterFilm extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField9ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       new MAJfilm().setVisible(true);
-       fermer();
+        new MAJfilm().setVisible(true);
+        fermer();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        Employe employe = new Employe();
-        employe.AjouterUnFilm(jTextField1.getText(),jTextField2.getText(),jTextField5.getText(),jTextField3.getText(),jTextField10.getText(),jTextField7.getText(),jTextField9.getText(),jTextField4.getText());
+        if (jTextField2.getText().isEmpty() == false || jTextField1.getText().isEmpty() == false || jTextField3.getText().isEmpty() == false || jTextField5.getText().isEmpty() == false || jTextField7.getText().isEmpty() == false || jTextField9.getText().isEmpty() == false
+                || jTextField10.getText().isEmpty() == false || jTextField4.getText().isEmpty() == false) {
+            Employe employe = new Employe();
+            employe.AjouterUnFilm(jTextField1.getText(), jTextField2.getText(), jTextField5.getText(), jTextField3.getText(), jTextField10.getText(), jTextField7.getText(), jTextField9.getText(), jTextField4.getText());
+            new Valider().setVisible(true);
+            fermer();
+        }
 
-        
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
-
 
     /**
      * @param args the command line arguments
@@ -265,7 +262,7 @@ public class AjouterFilm extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-               
+
             }
         });
     }

@@ -21,7 +21,6 @@ public class MAIN {
         new Menu().setVisible(true);
         
         
-        
     }
     
     

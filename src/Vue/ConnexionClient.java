@@ -6,6 +6,7 @@ package Vue;
 
 import Modele.Client;
 
+
 /**
  *
  * @author XPS
@@ -18,9 +19,11 @@ public class ConnexionClient extends javax.swing.JFrame {
     public ConnexionClient() {
         initComponents();
     }
-    void fermer(){
+
+    void fermer() {
         dispose();
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,9 +33,9 @@ public class ConnexionClient extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        LoginField = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        LoginField = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         PasswordField = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
@@ -45,8 +48,16 @@ public class ConnexionClient extends javax.swing.JFrame {
         setTitle("Bienvenue à vous !");
         setMaximumSize(new java.awt.Dimension(960, 536));
         setMinimumSize(new java.awt.Dimension(960, 536));
-        setPreferredSize(new java.awt.Dimension(960, 536));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        LoginField.setBackground(new java.awt.Color(255, 255, 255));
+        LoginField.setForeground(new java.awt.Color(0, 0, 0));
+        LoginField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LoginFieldActionPerformed(evt);
+            }
+        });
+        getContentPane().add(LoginField, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 210, 140, -1));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -61,15 +72,6 @@ public class ConnexionClient extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Password");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 250, 60, 30));
-
-        LoginField.setBackground(new java.awt.Color(255, 255, 255));
-        LoginField.setForeground(new java.awt.Color(0, 0, 0));
-        LoginField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LoginFieldActionPerformed(evt);
-            }
-        });
-        getContentPane().add(LoginField, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 210, 140, -1));
 
         jButton1.setBackground(new java.awt.Color(51, 51, 51));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -120,13 +122,18 @@ public class ConnexionClient extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_LoginFieldActionPerformed
 
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Client client = new Client();
+        AppercuClient x = new AppercuClient();
+        AppercuClient.jTextField1.setText(ConnexionClient.LoginField.getText());
+
         if (client.VerifierExistenceCompte(LoginField.getText(), PasswordField.getText())) {
-            new AppercuClient().setVisible(true);
+            x.setVisible(true);
             fermer();
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
 
     private void PasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordFieldActionPerformed
         // TODO add your handling code here:
@@ -169,13 +176,14 @@ public class ConnexionClient extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ConnexionClient().setVisible(true);
+
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField LoginField;
-    private javax.swing.JTextField PasswordField;
+    public static javax.swing.JTextField LoginField;
+    public static javax.swing.JTextField PasswordField;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
@@ -185,4 +193,5 @@ public class ConnexionClient extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
+
 }

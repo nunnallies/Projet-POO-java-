@@ -4,13 +4,8 @@
  */
 package Vue;
 
-
 import Modele.Employe;
-import java.awt.Color;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
-import DAO.JDBConnector;
+
 
 /**
  *
@@ -24,10 +19,12 @@ public class reduction extends javax.swing.JFrame {
     public reduction() {
         initComponents();
     }
- void fermer() {
+
+    void fermer() {
         dispose();
 
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -104,7 +101,7 @@ public class reduction extends javax.swing.JFrame {
         jLabel4.setText("Réduction");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, -1, -1));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton1.setText("Valider");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,7 +149,7 @@ public class reduction extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jCheckBox9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox9ActionPerformed
-      
+
     }//GEN-LAST:event_jCheckBox9ActionPerformed
 
     private void jCheckBox10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox10ActionPerformed
@@ -160,23 +157,35 @@ public class reduction extends javax.swing.JFrame {
     }//GEN-LAST:event_jCheckBox10ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-         new AppercuEmploye().setVisible(true);
+        new AppercuEmploye().setVisible(true);
         fermer();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       
+
         Employe employe = new Employe();
-        
-        
-        if (jCheckBox7.isSelected()) {employe.Reduction(20);}
-        if (jCheckBox8.isSelected()) {employe.Reduction(30);}
-        if (jCheckBox9.isSelected()) {employe.Reduction(50);}
-        if (jCheckBox10.isSelected()) {employe.Reduction(60);}
-        if (jCheckBox1.isSelected()) {employe.Reduction(10);}
-        if (jCheckBox4.isSelected()) {employe.Reduction(40);}
-        
-        
+
+        if (jCheckBox7.isSelected()) {
+            employe.Reduction(20);
+        }
+        if (jCheckBox8.isSelected()) {
+            employe.Reduction(30);
+        }
+        if (jCheckBox9.isSelected()) {
+            employe.Reduction(50);
+        }
+        if (jCheckBox10.isSelected()) {
+            employe.Reduction(60);
+        }
+        if (jCheckBox1.isSelected()) {
+            employe.Reduction(10);
+        }
+        if (jCheckBox4.isSelected()) {
+            employe.Reduction(40);
+        }
+        new Valider2().setVisible(true);
+        fermer();
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jCheckBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox7ActionPerformed
@@ -194,9 +203,7 @@ public class reduction extends javax.swing.JFrame {
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox1ActionPerformed
-    
-    
-    
+
     /**
      * @param args the command line arguments
      */
@@ -223,7 +230,7 @@ public class reduction extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(reduction.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-       
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

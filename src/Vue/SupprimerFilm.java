@@ -3,12 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vue;
+
 import Modele.Employe;
 
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
-import DAO.JDBConnector;
+
 
 /**
  *
@@ -92,23 +90,23 @@ public class SupprimerFilm extends javax.swing.JFrame {
 
     }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       new MAJfilm().setVisible(true);
-       fermer();
+        new MAJfilm().setVisible(true);
+        fermer();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Employe employe = new Employe();
-        employe.SupprimerFilm(jTextField1.getText());
+        if (jTextField1.getText().isEmpty() == false) {
+            Employe employe = new Employe();
+            employe.SupprimerFilm(jTextField1.getText());
+            new Valider().setVisible(true);
+            fermer();
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
-     
-    
-    
-    
-   
+
     /**
      * @param args the command line arguments
      */
@@ -139,7 +137,7 @@ public class SupprimerFilm extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-               
+
             }
         });
     }

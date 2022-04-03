@@ -34,6 +34,7 @@ public class FilmPopulaire extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Bienvenue à vous !");
         setMaximumSize(new java.awt.Dimension(960, 536));
         setMinimumSize(new java.awt.Dimension(960, 536));
         setPreferredSize(new java.awt.Dimension(960, 536));
@@ -73,22 +74,19 @@ public class FilmPopulaire extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
     void fermer() {
         dispose();
 
     }
 
-    
-    
-    
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         new AppercuEmploye().setVisible(true);
         fermer();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       new ListeFilm().setVisible(true);
+        new ListeFilm().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

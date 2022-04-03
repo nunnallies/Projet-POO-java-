@@ -16,10 +16,12 @@ public class AppercuClient extends javax.swing.JFrame {
     public AppercuClient() {
         initComponents();
     }
-    void fermer(){
-    
-    dispose();
-}
+
+    void fermer() {
+
+        dispose();
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,12 +37,13 @@ public class AppercuClient extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Bienvenue à vous !");
-        setMaximumSize(new java.awt.Dimension(960, 546));
-        setMinimumSize(new java.awt.Dimension(960, 546));
-        setPreferredSize(new java.awt.Dimension(960, 546));
+        setMaximumSize(new java.awt.Dimension(960, 536));
+        setMinimumSize(new java.awt.Dimension(960, 536));
+        setPreferredSize(new java.awt.Dimension(960, 536));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z16filmpopu.png"))); // NOI18N
@@ -85,27 +88,39 @@ public class AppercuClient extends javax.swing.JFrame {
         });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 180, 40));
 
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 10, 100, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       new AchatPlace().setVisible(true);
-       fermer();
+        new AchatPlace().setVisible(true);
+        fermer();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-       new Menu().setVisible(true);
-       fermer();
+        new Menu().setVisible(true);
+        fermer();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         new ListeFilm().setVisible(true);
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-      new HistoriqueClient().setVisible(true);
+        new PseudoHistorique().setVisible(true);
+
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,5 +164,6 @@ public class AppercuClient extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    public static javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

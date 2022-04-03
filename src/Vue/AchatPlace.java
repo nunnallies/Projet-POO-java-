@@ -6,19 +6,11 @@ package Vue;
 
 import Modele.Client;
 
-
 /**
  *
- * @author 
+ * @author
  */
 public class AchatPlace extends javax.swing.JFrame {
-
-    public char A;
-    public char B;
-    public char C;
-    public char D;
-    public char E;
-    public char F;
 
     /**
      * Creates new form AchatPlace
@@ -26,9 +18,11 @@ public class AchatPlace extends javax.swing.JFrame {
     public AchatPlace() {
         initComponents();
     }
-    void fermer(){
+
+    void fermer() {
         dispose();
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -63,16 +57,16 @@ public class AchatPlace extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jButton7 = new javax.swing.JButton();
-        jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Bienvenue à vous !");
-        setMaximumSize(new java.awt.Dimension(960, 546));
-        setMinimumSize(new java.awt.Dimension(960, 546));
-        setPreferredSize(new java.awt.Dimension(960, 546));
+        setMaximumSize(new java.awt.Dimension(960, 536));
+        setMinimumSize(new java.awt.Dimension(960, 536));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z22siege5555.png"))); // NOI18N
@@ -240,19 +234,30 @@ public class AchatPlace extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 50));
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 60, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Si vous etes majeur tapez A, si vous etes mineur tapez B");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, -1, -1));
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, -1, -1));
 
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 70, 80, -1));
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 50, 80, -1));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Pseudonyme");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, -1, -1));
+
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 90, 110, -1));
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z8ciné4.png"))); // NOI18N
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -261,22 +266,31 @@ public class AchatPlace extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       
-        Client client = new Client();
-        client.AcheterUnBillet(jTextField2.getText(),jTextField1.getText(),1,B,1);
+        if (jTextField2.getText().isEmpty() == false || jTextField1.getText().isEmpty() == false) {
+            Client client = new Client();
+            int r = client.GetIDClient(jTextField4.getText());
+            client.AcheterUnBillet(jTextField2.getText(), jTextField1.getText(), r, "B", "1");
+            new Valider3().setVisible(true);
+            fermer();
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        new AppercuClient().setVisible(true);
+        AppercuClient x = new AppercuClient();
+        AppercuClient.jTextField1.setText(ConnexionClient.LoginField.getText());
+        x.setVisible(true);
         fermer();
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
-        Client client = new Client();
-        client.AcheterUnBillet(jTextField2.getText(),jTextField1.getText(),1,A,1);
-        new AppercuClient().setVisible(true);
-        fermer();
+        if (jTextField2.getText().isEmpty() == false || jTextField1.getText().isEmpty() == false) {
+            Client client = new Client();
+            int r = client.GetIDClient(jTextField4.getText());
+            client.AcheterUnBillet(jTextField2.getText(), jTextField1.getText(), r, "A", "1");
+            new Valider3().setVisible(true);
+            fermer();
+        }
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
@@ -284,68 +298,112 @@ public class AchatPlace extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-      
-        Client client = new Client();
-        client.AcheterUnBillet(jTextField2.getText(),jTextField1.getText(),1,A,2);
+        if (jTextField2.getText().isEmpty() == false || jTextField1.getText().isEmpty() == false) {
+            Client client = new Client();
+            int r = client.GetIDClient(jTextField4.getText());
+            client.AcheterUnBillet(jTextField2.getText(), jTextField1.getText(), r, "A", "2");
+            new Valider3().setVisible(true);
+            fermer();
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-      
-        Client client = new Client();
-        client.AcheterUnBillet(jTextField2.getText(),jTextField1.getText(),1,C,1);
+        if (jTextField2.getText().isEmpty() == false || jTextField1.getText().isEmpty() == false) {
+            Client client = new Client();
+            int r = client.GetIDClient(jTextField4.getText());
+            client.AcheterUnBillet(jTextField2.getText(), jTextField1.getText(), r, "C", "1");
+            new Valider3().setVisible(true);
+            fermer();
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-     
-        Client client = new Client();
-        client.AcheterUnBillet(jTextField2.getText(),jTextField1.getText(),1,D,1);
+        if (jTextField2.getText().isEmpty() == false || jTextField1.getText().isEmpty() == false) {
+            Client client = new Client();
+            int r = client.GetIDClient(jTextField4.getText());
+            client.AcheterUnBillet(jTextField2.getText(), jTextField1.getText(), r, "D", "1");
+            new Valider3().setVisible(true);
+            fermer();
+        }
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-      
-        Client client = new Client();
-        client.AcheterUnBillet(jTextField2.getText(),jTextField1.getText(),1,E,1);
+        if (jTextField2.getText().isEmpty() == false || jTextField1.getText().isEmpty() == false) {
+            Client client = new Client();
+            int r = client.GetIDClient(jTextField4.getText());
+            client.AcheterUnBillet(jTextField2.getText(), jTextField1.getText(), r, "E", "1");
+            new Valider3().setVisible(true);
+            fermer();
+        }
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-      
-        Client client = new Client();
-        client.AcheterUnBillet(jTextField2.getText(),jTextField1.getText(),1,F,1);
+        if (jTextField2.getText().isEmpty() == false || jTextField1.getText().isEmpty() == false) {
+            Client client = new Client();
+            int r = client.GetIDClient(jTextField4.getText());
+            client.AcheterUnBillet(jTextField2.getText(), jTextField1.getText(), r, "F", "1");
+            new Valider3().setVisible(true);
+            fermer();
+        }
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        
-        Client client = new Client();
-        client.AcheterUnBillet(jTextField2.getText(),jTextField1.getText(),1,B,2);
+        if (jTextField2.getText().isEmpty() == false || jTextField1.getText().isEmpty() == false) {
+            Client client = new Client();
+            int r = client.GetIDClient(jTextField4.getText());
+            client.AcheterUnBillet(jTextField2.getText(), jTextField1.getText(), r, "B", "2");
+            new Valider3().setVisible(true);
+            fermer();
+        }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-       
-        Client client = new Client();
-        client.AcheterUnBillet(jTextField2.getText(),jTextField1.getText(),1,C,2);        // TODO add your handling code here:
+        if (jTextField2.getText().isEmpty() == false || jTextField1.getText().isEmpty() == false) {
+            Client client = new Client();
+            int r = client.GetIDClient(jTextField4.getText());
+            client.AcheterUnBillet(jTextField2.getText(), jTextField1.getText(), r, "C", "2");
+            new Valider3().setVisible(true);
+            fermer();
+        }
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-     
-        Client client = new Client();
-        client.AcheterUnBillet(jTextField2.getText(),jTextField1.getText(),1,D,2);
+        if (jTextField2.getText().isEmpty() == false || jTextField1.getText().isEmpty() == false) {
+            Client client = new Client();
+            int r = client.GetIDClient(jTextField4.getText());
+            client.AcheterUnBillet(jTextField2.getText(), jTextField1.getText(), r, "D", "2");
+            new Valider3().setVisible(true);
+            fermer();
+        }
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-      
-        Client client = new Client();
-        client.AcheterUnBillet(jTextField2.getText(),jTextField1.getText(),1,E,2);
+        if (jTextField2.getText().isEmpty() == false || jTextField1.getText().isEmpty() == false) {
+            Client client = new Client();
+            int r = client.GetIDClient(jTextField4.getText());
+            client.AcheterUnBillet(jTextField2.getText(), jTextField1.getText(), r, "E", "2");
+            new Valider3().setVisible(true);
+            fermer();
+        }
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
-     
-        Client client = new Client();
-        client.AcheterUnBillet(jTextField2.getText(),jTextField1.getText(),1,F,2);
+        if (jTextField2.getText().isEmpty() == false || jTextField1.getText().isEmpty() == false) {
+            Client client = new Client();
+            int r = client.GetIDClient(jTextField4.getText());
+            client.AcheterUnBillet(jTextField2.getText(), jTextField1.getText(), r, "F", "2");
+            new Valider3().setVisible(true);
+            fermer();
+        }
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -376,6 +434,7 @@ public class AchatPlace extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 new AchatPlace().setVisible(true);
             }
@@ -396,10 +455,10 @@ public class AchatPlace extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
@@ -412,5 +471,6 @@ public class AchatPlace extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    public static javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }

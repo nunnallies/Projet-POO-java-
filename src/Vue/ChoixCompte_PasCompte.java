@@ -16,7 +16,8 @@ public class ChoixCompte_PasCompte extends javax.swing.JFrame {
     public ChoixCompte_PasCompte() {
         initComponents();
     }
-    void fermer(){
+
+    void fermer() {
         dispose();
     }
 
@@ -73,6 +74,11 @@ public class ChoixCompte_PasCompte extends javax.swing.JFrame {
         jButton6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton6.setForeground(new java.awt.Color(204, 204, 204));
         jButton6.setText("Créer Un Compte");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 270, -1, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vue/z21retour2.png"))); // NOI18N
@@ -90,19 +96,24 @@ public class ChoixCompte_PasCompte extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-       new AppercuClientPASmembre().setVisible(true);
-       fermer();
+        new AppercuClientPASmembre().setVisible(true);
+        fermer();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-      new ConnexionClient().setVisible(true);
-      fermer();
+        new ConnexionClient().setVisible(true);
+        fermer();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      new Menu().setVisible(true);
-      fermer();
+        new Menu().setVisible(true);
+        fermer();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        new CreationCompteClient().setVisible(true);
+        fermer();
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -23,28 +23,27 @@ import javax.swing.table.DefaultTableModel;
  * @author XPS
  */
 public class HistoriqueClient extends JFrame implements ActionListener, ItemListener {
-     private final JButton MonCompte;
+
+    private final JButton MonCompte;
 
     private final JPanel p0;
-    
 
-    public HistoriqueClient() {
+    public HistoriqueClient(String x) {
         super("Page d'accueil");
         setLayout(new BorderLayout());
-        setBounds(0, 0, 400, 400);
+        setBounds(0, 0, 700, 400);
         setResizable(true);
         setVisible(true);
 
         MonCompte = new JButton("Mon Compte");
         Client client = new Client();
-
         p0 = new JPanel();
         p0.add(MonCompte);
         p0.setLayout(new GridLayout(1, 3));
         String columns[] = {"NumeroBillet", "Categorie", "NumeroSeance", "Rangee", "allee"};
         DefaultTableModel snoopy;
-        
-        snoopy = new DefaultTableModel(client.getClientBillets(1), columns);
+
+        snoopy = new DefaultTableModel(client.getClientBillets(client.GetIDClient(x)), columns);
 
         JTable table = new JTable(snoopy);
 
@@ -52,11 +51,7 @@ public class HistoriqueClient extends JFrame implements ActionListener, ItemList
         getContentPane().add(scrollPane);
         table.setShowGrid(false);
         table.setShowVerticalLines(false);
-        //p0.add(scrollPane);
-        //p0.add(table);
-        //add("p0",p0);
 
-        //Définir la hauteur des lignes dans            
     }
 
     @Override

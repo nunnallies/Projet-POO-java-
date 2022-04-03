@@ -4,18 +4,14 @@
  */
 package Vue;
 
-import Modele.*;
+
 import Modele.Film;
 import java.awt.event.*;
 import java.awt.*;
-import java.util.*;
 import javax.swing.*;
-import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.table.DefaultTableModel;
 
-/** u
+/**
+ *
  *
  * @author Naiss
  */
@@ -38,19 +34,15 @@ public class ListeFilm extends JFrame implements ActionListener, ItemListener {
 
         MonCompte = new JButton("Mon Compte");
         Film film = new Film();
-        Billet billet = new Billet();
-        Client client=new Client();
 
         p0 = new JPanel();
         p0.add(MonCompte);
         p0.setLayout(new GridLayout(1, 3));
-        //String columns[] = {"Affiche", "Nom", "Realisateur", "Duree", "Synopsis", "Date de parution", "Note de presse", "Note de spectateurs", "Matricule employé", "IDFILM"};
-        
-        String columns[]={"NumeroBillet","NumeroSeance","Film","Catégorie","Rangee","Allee"};
-        DefaultTableModel snoopy;
-   
+        String columns[] = {"Nom", "Realisateur", "Duree", "Synopsis", "Date de parution", "Note de presse", "Note de spectateurs", "IDFILM"};
 
-        snoopy = new DefaultTableModel(client.getClients(), columns);
+        DefaultTableModel snoopy;
+
+        snoopy = new DefaultTableModel(film.getfilms(), columns);
 
         JTable table = new JTable(snoopy);
 
@@ -58,7 +50,7 @@ public class ListeFilm extends JFrame implements ActionListener, ItemListener {
         getContentPane().add(scrollPane);
         table.setShowGrid(false);
         table.setShowVerticalLines(false);
-                
+
     }
 
     @Override

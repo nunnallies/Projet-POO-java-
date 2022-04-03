@@ -3,13 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vue;
+
 import Modele.Employe;
-
-
-import java.sql.Connection;
-import javax.swing.JFrame;
-import static javax.swing.text.html.HTML.Tag.SELECT;
-import java.sql.*;
 
 /**
  *
@@ -22,15 +17,13 @@ public class ConnexionEmploye extends javax.swing.JFrame {
      */
     public ConnexionEmploye() {
         initComponents();
-       
+
     }
 
     void fermer() {
         dispose();
 
     }
-
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -133,7 +126,7 @@ public class ConnexionEmploye extends javax.swing.JFrame {
         if (employe.VerifierExistenceEmploye(LoginField.getText(), PasswordField.getText())) {
             new AppercuEmploye().setVisible(true);
             fermer();
-        } 
+        }
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -146,7 +139,7 @@ public class ConnexionEmploye extends javax.swing.JFrame {
     }//GEN-LAST:event_LoginFieldActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        
+
         new Menu().setVisible(true);
         fermer();
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -160,9 +153,7 @@ public class ConnexionEmploye extends javax.swing.JFrame {
  /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-            new ConnexionEmploye().setVisible(true);
-
-              
+                new ConnexionEmploye().setVisible(true);
 
             }
         });
@@ -181,7 +172,5 @@ public class ConnexionEmploye extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
-   
 
 }
-

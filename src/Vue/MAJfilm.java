@@ -4,8 +4,7 @@
  */
 package Vue;
 
-import java.awt.Rectangle;
-import javax.swing.SwingConstants;
+
 
 /**
  *
@@ -19,11 +18,12 @@ public class MAJfilm extends javax.swing.JFrame {
     public MAJfilm() {
         initComponents();
     }
-     void fermer() {
+
+    void fermer() {
         dispose();
 
     }
-   
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -104,8 +104,8 @@ public class MAJfilm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-         new AjouterFilm().setVisible(true);
-         fermer();
+        new AjouterFilm().setVisible(true);
+        fermer();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -114,17 +114,17 @@ public class MAJfilm extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-       new SupprimerFilm().setVisible(true);
-       fermer();
+        new SupprimerFilm().setVisible(true);
+        fermer();
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       new ListeFilm().setVisible(true);
+        new ListeFilm().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       new AjouterSeance().setVisible(true);
-       fermer();
+        new AjouterSeance().setVisible(true);
+        fermer();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
@@ -158,11 +158,10 @@ public class MAJfilm extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MAJfilm().setVisible(true);
-                
+
             }
         });
     }
-   
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

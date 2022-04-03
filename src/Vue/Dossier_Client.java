@@ -5,7 +5,6 @@
 package Vue;
 
 import Modele.Client;
-import Modele.Film;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -24,10 +23,10 @@ import javax.swing.table.DefaultTableModel;
  * @author XPS
  */
 public class Dossier_Client extends JFrame implements ActionListener, ItemListener {
-     private final JButton MonCompte;
+
+    private final JButton MonCompte;
 
     private final JPanel p0;
-    
 
     public Dossier_Client() {
         super("Page d'accueil");
@@ -52,7 +51,7 @@ public class Dossier_Client extends JFrame implements ActionListener, ItemListen
         getContentPane().add(scrollPane);
         table.setShowGrid(false);
         table.setShowVerticalLines(false);
-                    
+
     }
 
     @Override
