@@ -29,7 +29,7 @@ public class Compte {
 
     }
     
-    public boolean VerifierExistenceCompte(String pseudonyme,String mdp){
+    public boolean VerifierExistenceCompte(String pseudonyme,String mdp){ // Permets de verifier que le compte du client existe bien
         Connection conn;
         JDBConnector jdbc = new JDBConnector();
         conn = jdbc.CreateConnection();

@@ -9,5 +9,6 @@ package Modele;
  * @author Naiss
  */
 public class Siege {
+    String rangee,numerosalle,allee;
     
 }

@@ -44,7 +44,7 @@ public class Film {
 
     }
 
-    public Object[][] getfilms() {
+    public Object[][] getfilms() { // methode permettant permettant d'avoir tout les films
         Connection conn;
         JDBConnector jdbc = new JDBConnector();
         conn = jdbc.CreateConnection();
@@ -111,7 +111,7 @@ public class Film {
         return donnee;
     }
     
-    public String GetID(String nom){
+    public String GetID(String nom){ //Permets d'avoir l'ID d'un film en fonction de son nom
         Connection conn;
         JDBConnector jdbc = new JDBConnector();
         conn = jdbc.CreateConnection();
@@ -132,5 +132,75 @@ public class Film {
         
         return ID; 
         
+    }
+    
+    public Object[][] getfilmsPopulaire() { // methode permettant permettant d'avoir tout les films par popularité
+        Connection conn;
+        JDBConnector jdbc = new JDBConnector();
+        conn = jdbc.CreateConnection();
+        ArrayList<Film> films= new ArrayList<Film>();
+        int nb=0;
+        try {
+            PreparedStatement st = conn.prepareStatement("SELECT count(*) from film");
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                nb= rs.getInt(1);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error Occured " + e.toString());
+        }
+        Object donnee[][]=new Object[nb][11];
+        try {
+            String requete = "SELECT * from film ORDER BY NombreSpec DESC";
+            System.out.println(requete);
+            Statement st = conn.createStatement();
+            ResultSet rs=st.executeQuery(requete);
+            int i=0;
+            while (rs.next()){
+               
+                String ID=rs.getString("IDFILM");
+                String nom=rs.getString("Nom");
+                String realisateur=rs.getString("Realisateur");
+                String DateDeParution=rs.getString("DateDeParution");
+                String NoteDePresse=rs.getString("NoteDePresse");
+                String NoteDeSpec=rs.getString("NoteDeSpectateurs");
+                String Synopsis=rs.getString("Synopsis");
+                String MatriculeEmploye=rs.getString("MatriculeEmploye");
+                String Duree=rs.getString("Duree");
+                String url=rs.getString("path");
+                String Nombre=rs.getString("NombreSpec");
+                System.out.println(DateDeParution+Synopsis+MatriculeEmploye+ID);
+
+                donnee[i][0]=new ImageIcon(url);
+
+                ImageIcon image = new ImageIcon(url);
+                donnee[i][0]=image;
+
+                donnee[i][1]=nom;
+                donnee[i][2]=realisateur;
+                donnee[i][3]=Duree;
+                donnee[i][4]=Synopsis;
+                donnee[i][5]=DateDeParution;
+                donnee[i][6]=NoteDePresse;
+                donnee[i][7]=NoteDeSpec;
+                donnee[i][10]=MatriculeEmploye;
+                donnee[i][9]=ID;
+                donnee[i][8]=Nombre;
+                
+                System.out.print(Arrays.deepToString(donnee));
+                i++;
+                
+                
+                
+            }
+            
+
+        } catch (SQLException e){
+             System.out.println("Error Occured " + e.toString());
+            
+        }
+        System.out.println(Arrays.deepToString(donnee));
+        return donnee;
     }
 }

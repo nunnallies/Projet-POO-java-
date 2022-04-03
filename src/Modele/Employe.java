@@ -21,7 +21,7 @@ public class Employe {
     String nom, prenom, login, motdepasse;
     Date debutcontrat;
 
-    public boolean VerifierExistenceEmploye(String pseudonyme, String mdp) {
+    public boolean VerifierExistenceEmploye(String pseudonyme, String mdp) { // Permets de verifier que la personne qui se connecte est bien un employé
         Connection conn;
         JDBConnector jdbc = new JDBConnector();
         conn = jdbc.CreateConnection();
@@ -46,7 +46,7 @@ public class Employe {
 
 
 
-    public void AjouterUnFilm(String NomFilm, String Realisateur, String DateDeParution, String Synopsis, String NoteDePresse, String NoteDeSpec, String MatriculeEmploye,String Duree) {
+    public void AjouterUnFilm(String NomFilm, String Realisateur, String DateDeParution, String Synopsis, String NoteDePresse, String NoteDeSpec, String MatriculeEmploye,String Duree) { //methode qui permets à un employé d'ajouter un film
 
 
         Connection conn = null;
@@ -79,7 +79,7 @@ public class Employe {
          
 
 
-    public void Reduction(int pourcentage) {
+    public void Reduction(int pourcentage) { //Creation d'une nouvelle reduction par l'employé
 
         Connection conn;
         JDBConnector jdbc = new JDBConnector();
@@ -101,7 +101,7 @@ public class Employe {
 
     }
 
-    public void ProgrammerSeance(String NumeroSeance, String date, String heure, String DureeSeance, String numerosalle, String idfilm, String matriculeemploye) {
+    public void ProgrammerSeance(String NumeroSeance, String date, String heure, String DureeSeance, String numerosalle, String idfilm, String matriculeemploye) { //Ajout d'une nouvelle seance par l'employé
         Connection conn;
         JDBConnector jdbc = new JDBConnector();
         conn = jdbc.CreateConnection();
@@ -134,7 +134,7 @@ public class Employe {
 
     }
 
-    public void SupprimerFilm(String nom) {
+    public void SupprimerFilm(String nom) { //Methode qui supprime un film grace à son nom
         Connection conn;
         JDBConnector jdbc = new JDBConnector();
         conn = jdbc.CreateConnection();
@@ -155,7 +155,7 @@ public class Employe {
 
     }
 
-    public void SupprimerReduction(int pourcentage) {
+    public void SupprimerReduction(int pourcentage) {//Methode qui permets à l'employé de supprimer une reduction
         Connection conn;
         JDBConnector jdbc = new JDBConnector();
         conn = jdbc.CreateConnection();
@@ -176,7 +176,7 @@ public class Employe {
 
     }
 
-    public void SupprimerSeance(int numeroseance, int numerosalle, int idfilm) {
+    public void SupprimerSeance(int numeroseance, int numerosalle, int idfilm) { //Methode qui permets de retirer une seance
         Connection conn;
         JDBConnector jdbc = new JDBConnector();
         conn = jdbc.CreateConnection();

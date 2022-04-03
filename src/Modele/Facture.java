@@ -19,7 +19,7 @@ import java.util.Arrays;
  */
 public class Facture {
     
-    String Prix,Date,Lieu,IDREDUCTION,NumeroClient,NumeroBillet;
+    String Prix,Date,Lieu,IDREDUCTION,NumeroClient,NumeroBillet; //Attributs
     
     
     
