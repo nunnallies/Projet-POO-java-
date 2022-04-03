@@ -8,20 +8,21 @@ package Vue;
  *
  * @author XPS
  */
-public class Valider3 extends javax.swing.JFrame {
+public class Valider5 extends javax.swing.JFrame {
 
     /**
-     * Creates new form Valider3
+     * Creates new form Valider5
      */
-    public Valider3() {
+    public Valider5() {
         initComponents();
     }
 
-    void fermer() {
-        dispose();
+    
+    void fermer(){
+    dispose();
     }
 
-   
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -33,6 +34,8 @@ public class Valider3 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Bienvenue à vous !");
         setMaximumSize(new java.awt.Dimension(960, 536));
+        setMinimumSize(new java.awt.Dimension(960, 536));
+        setPreferredSize(new java.awt.Dimension(960, 536));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -58,11 +61,7 @@ public class Valider3 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     //Jframe pour dire a l'utilisateur que ce qu'il a fait a été pris en compte
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-        fermer();
-        AppercuClient x = new AppercuClient();
-        AppercuClient.jTextField1.setText(ConnexionClient.LoginField.getText());
-        x.setVisible(true);
+        new ChoixCompte_PasCompte().setVisible(true);
         fermer();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -83,20 +82,20 @@ public class Valider3 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Valider3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Valider5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Valider3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Valider5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Valider3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Valider5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Valider3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Valider5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Valider3().setVisible(true);
+                new Valider5().setVisible(true);
             }
         });
     }

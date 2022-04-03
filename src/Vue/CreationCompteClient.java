@@ -174,18 +174,20 @@ public class CreationCompteClient extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    //permet de retourner en arrière
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         new ChoixCompte_PasCompte().setVisible(true);
         fermer();
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    //blindage pour s'assurer que tout les champs ont été rempli et creation du compte
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         if (jTextField2.getText().isEmpty() == false || jTextField1.getText().isEmpty() == false || jTextField3.getText().isEmpty() == false || jTextField4.getText().isEmpty() == false || jTextField5.getText().isEmpty() == false
                 || jTextField6.getText().isEmpty() == false || jTextField7.getText().isEmpty() == false) {
             Client client = new Client();
             client.CreerUnCompte(jTextField4.getText(), jTextField5.getText(), jTextField6.getText(), jTextField7.getText(), jTextField2.getText(), jTextField1.getText(), jTextField3.getText());
+        
         }
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed

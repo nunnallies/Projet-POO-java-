@@ -8,11 +8,16 @@ package Vue;
  *
  * @author XPS
  */
+
+
+//permet au client de choisir ce qu'il veut faire
 public class AppercuClient extends javax.swing.JFrame {
 
     /**
      * Creates new form AppercuClient
      */
+    
+    
     public AppercuClient() {
         initComponents();
     }

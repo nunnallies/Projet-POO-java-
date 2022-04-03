@@ -170,7 +170,7 @@ public class AjouterSeance extends javax.swing.JFrame {
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
-
+    //on blinde et on ajoute une séance
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if (jTextField2.getText().isEmpty() == false || jTextField1.getText().isEmpty() == false || jTextField3.getText().isEmpty() == false || jTextField4.getText().isEmpty() == false || jTextField5.getText().isEmpty() == false || jTextField7.getText().isEmpty() == false
                 || jTextField8.getText().isEmpty() == false) {

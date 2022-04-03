@@ -8,6 +8,7 @@ package Vue;
  *
  * @author XPS
  */
+//permet à l'employé de choisir ce qu'il veut faire
 public class AppercuEmploye extends javax.swing.JFrame {
 
     /**

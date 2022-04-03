@@ -84,7 +84,7 @@ public class FilmPopulaire extends javax.swing.JFrame {
         new AppercuEmploye().setVisible(true);
         fermer();
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    //affiche la liste des films populaire
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         new ListeFilmPopulaire().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
