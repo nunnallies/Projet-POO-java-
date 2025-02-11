@@ -2,7 +2,7 @@
 
 Projet mettant en place une plateforme de gestion de cinéma sous java avec une architecture MVC et un JDBC. 
 
-Fonctionnalité: 
+Fonctionnalités: 
 - Affichage des films à l'affiche
 - Réservation de billet coté Client
 - Ajout ou suppression de film côté admin
